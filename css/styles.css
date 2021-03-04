@@ -57,9 +57,16 @@ body {
   max-width: 1200px;
 }
 
+/* Don't show link behavior*/
+a:visited, a:link {
+  text-decoration: none;
+  color: currentColor;
+}
+
 /* Don't show border when click */
 button:focus {
   outline: none;
+  border: none;
 }
 
 /**
@@ -79,6 +86,7 @@ SCSS and BEM structure were used on this project
     height: 5em;
     color: #F4F5F7;
     background-color: #8C30F5;
+    border-bottom: 0.2em solid #E5E9F2;
   }
 }
 @media only screen and (min-width: 770px) {
@@ -215,7 +223,7 @@ SCSS and BEM structure were used on this project
   .navigate--opened {
     flex-flow: row wrap;
     justify-content: center;
-    top: 4.5em;
+    top: 4.4em;
     width: 100%;
     background-color: #8C30F5;
     transition: 0.7s;
@@ -264,6 +272,8 @@ SCSS and BEM structure were used on this project
   flex-flow: row;
   align-items: center;
   justify-content: center;
+  font-size: 0.778em;
+  font-weight: 700;
 }
 .account-buttons__login, .account-buttons__sign-up {
   display: flex;
@@ -277,7 +287,6 @@ SCSS and BEM structure were used on this project
 }
 @media only screen and (max-width: 768px) {
   .account-buttons__login, .account-buttons__sign-up {
-    font-weight: 700;
     margin: 0.3em 0.778em;
     height: 1.8em;
   }

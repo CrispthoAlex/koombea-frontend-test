@@ -54,7 +54,13 @@ body {
 .main-header, .main-content, .main-footer {
     max-width:1200px;
 }
+/* Don't show link behavior*/
+a:visited, a:link {
+    text-decoration: none;
+    color:currentColor;
+}
 /* Don't show border when click */
 button:focus {
     outline: none;
+    border:none;
 }
