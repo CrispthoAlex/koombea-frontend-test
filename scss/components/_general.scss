@@ -60,7 +60,9 @@ a:visited, a:link {
     color:currentColor;
 }
 /* Don't show border when click */
-button:focus {
-    outline: none;
+button {
     border:none;
+    &:focus {
+        outline: none;
+    }
 }

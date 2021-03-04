@@ -64,9 +64,11 @@ a:visited, a:link {
 }
 
 /* Don't show border when click */
+button {
+  border: none;
+}
 button:focus {
   outline: none;
-  border: none;
 }
 
 /**
