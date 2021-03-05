@@ -9,16 +9,32 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon-32x32.png">
     <title>Koombea | Landing page test</title>
     <link rel="canonical" href="https://www.koombea.com/">
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+
 </head>
 <body>
     <div class="container">
         <header class="main-header">
             <div class="navbar">
-                <div class="navigate">
+                <button class="js-menu-button menu-button" aria-label="Main Menu">
+                    <svg width="25px" height="25px" viewBox="0 0 100 100">
+                        <path class="menu-button__line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                        <path class="menu-button__line line2" d="M 20,50 H 80" />
+                        <path class="menu-button__line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+                    </svg>
+                </button>
+                <div class="navigate js-navigate">
                     <ul class="navigate-list">
-                        <li class="navigate-list__item">About</li>
-                        <li class="navigate-list__item">Pricing</li>
-                        <li class="navigate-list__item">Contact</li>
+                        <li class="navigate-list__item navigate-list__item--hover">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="navigate-list__item navigate-list__item--hover">
+                            <a href="#pricing">Pricing</a>
+                        </li>
+                        <li class="navigate-list__item navigate-list__item--hover">
+                            <a href="#contact">Contact</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="logo-header">
@@ -27,12 +43,12 @@
                     </a>
                 </div>
                 <div class="account-buttons">
-                    <div class="account-buttons__login">
-                        Login
-                    </div>
-                    <div class="account-buttons__sign-up">
-                        Sign up
-                    </div>
+                    <button class="account-buttons__login">
+                        <p>Login</p>
+                    </button>
+                    <button class="account-buttons__sign-up">
+                        <p>Sign up</p>
+                    </button>
                 </div>
             </div>
         </header>
@@ -41,16 +57,16 @@
             <section class="presentation-section">
                 <div class="info-page">
                     <div class="info-page__title">
-                        <h1 class="info-page__title--presentation">
+                        <h1>
                             Landing page UI kit
                         </h1>
                     </div>
-                    <div class="info-page__text--presentation">
+                    <div class="info-page__text">
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi esse expedita quasi enim commodi molestiae vero a! Doloremque id eum vero cumque harum, est nesciunt illum ut, saepe, optio accusantium?
                         </p>
                     </div>
-                    <button class="info-page__button info-page__button--presentation">
+                    <button class="info-page__button">
                         Get Started
                     </button>
                 </div>
@@ -65,11 +81,11 @@
             <!-- Showing Clients -->
             <section class="our-clients">
                 <div class="info-page">
-                    <div class="info-page__title">
-                        <h2 class="info-page__title--clients">Our Clients</h2>
+                    <div class="info-page__title info-page__title--clients">
+                        <h1>Our Clients</h1>
                     </div>
-                    <div class="info-page__text">
-                        <p class="info-page__text--clients">
+                    <div class="info-page__text info-page__text--clients">
+                        <p>
                             We have been working with some Fortune 500 clients
                         </p>
                     </div>
@@ -247,6 +263,9 @@
                 </div>
             </div>
         </footer>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="./scripts/header.js"></script>
     </div>
 </body>
 </html>
