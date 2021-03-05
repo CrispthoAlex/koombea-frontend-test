@@ -1,0 +1,84 @@
+/* MAIN CONTENT */
+
+// ==== Make mixin for general properties =====//
+
+// Presentation section
+.overview {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0 8.5%;
+    width: 100%;
+    @include responsive-page(smd) {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}
+
+.info-page {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    align-content: flex-start;
+    justify-content: center;
+    @include responsive-page(smd) {
+        flex-flow: row wrap;
+        text-align: center;
+        width: 100%;
+    }
+    &__title{
+        font: { weight: 800; }
+        @include responsive-page(smd) {
+            font-size:1.5rem;
+        }
+    }
+    &__text {
+        font-size: 1em;
+    }
+    &__button {
+        width: 10.556em;
+        height: 3.444em;
+        background-color: $purple;
+        border-radius: 8px;
+        color: #ffffff;
+        font: {
+            weight: bold;
+            size:1.111em;
+        }
+    }
+}
+
+.image {
+    position: relative;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+    &__stats {
+        position: relative;
+        width: 100%;
+        max-height: 26.667em;
+        max-width: 42.667em;
+        transform: scale(1);
+        @include responsive-page(smd) {
+            display: none;
+        }
+    }
+}
+
+.circle-background {
+    position: absolute;
+    background: $purple800;
+    border-radius: 100%;
+    content: "";
+    width: 36em;
+    height: 36em;
+    max-width: 36em;
+    right: 0;
+    z-index: -1;
+    @include responsive-page(smd) {
+        transform: scale(100%);
+    }
+}
