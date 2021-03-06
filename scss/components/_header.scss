@@ -3,22 +3,24 @@ SCSS and BEM structure were used on this project
 */
 
 .main-header {
-    display: flex;
     margin: 0;
     width: 100%;
     position: relative;
+    height: em(72);
     box-shadow: 0px 1px 0px #E5E9F2;
-    @include responsive-page(smd) {
+    @mixin header-responsive () {
         flex-flow: row;
         align-items: center;
-        height: 5em;
         color: $gray100;
         background-color: $purple;
-        border-bottom: .2em solid #E5E9F2;
+        border-bottom: em(3.5) solid #E5E9F2;
     }
+    @include responsive-page(smd) { @include header-responsive (); }
+    
+    @include responsive-page(md) { @include header-responsive (); }
+    
     @include responsive-page(mdtop) {
         justify-content: space-around;
-        height: 4em;
         background-color: #ffffff;
     }
 }
@@ -26,18 +28,18 @@ SCSS and BEM structure were used on this project
 .fixed {
     position: fixed;
     top:0em;
-    //z-index: 1;
+    z-index: 1;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: em(1200);
     position: relative;
-    @include responsive-page(smd) {
-        flex-flow:row wrap;
-    }
+    @include responsive-page(smd) {flex-flow:row wrap; }
+    @include responsive-page(md) { flex-flow:row wrap; }
 }
 /* Mobile button animation */
 .menu-button {
@@ -45,17 +47,17 @@ SCSS and BEM structure were used on this project
     border: none;
     cursor: pointer;
     padding: 0;
-
-    @include responsive-page(smd) {
-        transform:scale(1.8);
+    @mixin smd-md-behavior (){
+        transform:1.8;
         padding: .5rem;
         width: 33%;
         display: block;
     }
+    @include responsive-page(smd) { @include smd-md-behavior() }
 
-    @include responsive-page(mdtop) {
-        display: none;
-    }
+    @include responsive-page(md) { @include smd-md-behavior() }
+
+    @include responsive-page(mdtop) { display: none; }
 
     &__line {
         fill:none;
@@ -123,18 +125,15 @@ SCSS and BEM structure were used on this project
                 size: 0.778em;
             }
             line-height: 1.111em;
-            margin: 0 0.556em;
-            @include responsive-page(smd) {
-                margin:25% 0;
-            }
+            margin: 0 em(10);
+            @include responsive-page(smd) { margin:em(25) 0; font-size: em(16); }
+
+            @include responsive-page(md) { margin:em(25) 0; font-size: em(16); }
         }
-        @include responsive-page(smd) {
-            flex-flow: column;
-            height:10em;
-        }
+        @include responsive-page(smd) { flex-flow: column; height:em(256); }
+        @include responsive-page(md) { flex-flow: column; height:em(256); }
     }
-    
-    @include responsive-page(smd) {
+    @mixin menu-opened () {
         position: absolute;
         order:4;
         top:-2em;
@@ -149,11 +148,12 @@ SCSS and BEM structure were used on this project
             transition: .7s;
             transform: scale(1);
             z-index:1;
+            border-radius: 0 0 em(30) em(30);
         }
     }
-    @include responsive-page(mdtop) {
-        width:auto;
-    }
+    @include responsive-page(smd) { @include menu-opened() }
+    @include responsive-page(md) { @include menu-opened() }
+    @include responsive-page(mdtop) { width:auto; }
 }
 .active {
     border: .2em solid $gray700;
@@ -162,23 +162,26 @@ SCSS and BEM structure were used on this project
     background-color: $cyan;
     transition: .6s;
     width: 110%;
-    @include responsive-page(smd) {
-        background-color: $gray800;
-    }
+    @include responsive-page(smd) { background-color: $gray800; }
+    @include responsive-page(md) { background-color: $gray800; }
 }
 
 .logo-header {
     display: flex;
     position: relative;
     justify-content: center;
-    @include responsive-page(smd) {
+
+    @mixin logo-responsive () {
         align-self: center;
-        padding: 2% 1em;
+        padding: em(8) em(16);
         border: .25em solid $purple800;
-        border-radius:1.5em;
+        border-radius:em(24);
         background-color: $gray100;
         width: 33%;
+        max-width:em(150);
     }
+    @include responsive-page(smd) { @include logo-responsive () }
+    @include responsive-page(md) { @include logo-responsive () }
 }
 .account-buttons {
     display: flex;
@@ -196,28 +199,21 @@ SCSS and BEM structure were used on this project
         width: 5.556em;
         height: 2.222em;
         font-weight: 700;
-        @include responsive-page(smd) {
-            margin:.3em .778em;
-            height: 1.8em;
-        }
+        @include responsive-page(smd) { margin:.3em .778em; height: 1.8em; }
+        @include responsive-page(md) { margin:.3em .778em; height: 1.8em; }
     }
     &__login {
         color:$purple;
         background-color: $purple100;
-        @include responsive-page(smd) {
-            color:$gray900;
-        }
+        @include responsive-page(smd) { color:$gray900; }
+        @include responsive-page(md) { color:$gray900; }
     }
     &__sign-up {
         color:#ffffff;
         background-color:$purple;
-        @include responsive-page(smd) {
-            color:$purple;
-            background-color: #ffffff;
-        }
+        @include responsive-page(smd) { color:$purple; background-color: #ffffff; }
+        @include responsive-page(md) { color:$purple; background-color: #ffffff; }
     }
-    @include responsive-page(smd) {
-        flex-flow:column;
-        width: 33%;
-    }
+    @include responsive-page(smd) { flex-flow:column; width: 33%; }
+    @include responsive-page(md) { flex-flow:column; width: 33%; }
 }
