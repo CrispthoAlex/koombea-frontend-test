@@ -26,6 +26,7 @@
         align-items: center;
         width: 100%;
     }
+    @include responsive-page(md) {padding-left: em(16);    }
     &__title{
         font-size:em(56);
         h1 {
@@ -58,9 +59,7 @@
                 size:1.4rem;
             }
             @include responsive-page(smd) {
-                font: {
-                    size:1rem;
-                }
+                font: { size:1rem; }
             }
 
         }
