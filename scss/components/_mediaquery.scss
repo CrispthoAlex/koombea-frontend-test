@@ -5,8 +5,11 @@
 @mixin responsive-page ($device) {
     
     /// @smd : Small and Medium device
-    @if ($device==smd) { @media only screen and (max-width: 768px) { @content; } }
+    @if ($device==smd) { @media screen and (max-width: 768px) { @content; } }
     
+    /// @md: Medium
+    @if ($device==md) { @media screen and (min-width: 769px) and (max-width: 1023px) { @content; } }
+
     /// @mdtop: Medium and Desktop device
-    @if ($device==mdtop) { @media only screen and (min-width: 770px) { @content; } }
+    @if ($device==mdtop) { @media screen and (min-width: 1024px) { @content; } }
 }

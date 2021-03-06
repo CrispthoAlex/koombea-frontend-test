@@ -1,12 +1,13 @@
 /* Stableshing Fonts */
-@font-face {
+@font-face { // Normal font
     font: {
-        family: $primaryfont, $family;
+        family: $primaryfont;
         weight: bold;
         style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-VariableFont_wght.woff') format('woff');
+    src: url('../../fonts/Manrope-Bold.woff') format('woff'),
+    url('../../fonts/Manrope-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -16,7 +17,8 @@
         style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-VariableFont_wght.woff') format('woff');
+    src: url('../../fonts/Manrope-SemiBold.woff') format('woff'),
+    url('../../fonts/Manrope-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
@@ -26,7 +28,8 @@
         style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-VariableFont_wght.woff') format('woff');
+    src: url('../../fonts/Manrope-Regular.woff') format('woff'),
+    url('../../fonts/Manrope-Regular.woff2') format('woff2');
 }
 
 /* General CSS properties */
@@ -43,16 +46,25 @@ li {
 }
 body {
     color: $gray900;
-    @include bigfont ($primaryfont, $family, $base-size);
+    @include bigfont ($primaryfont, $family);
+    display: flex;
+    justify-content: center;
 }
+
 .container {
-    width: 100%;
     display: flex;
     flex-flow: column;
     align-items: center;
+    width: 100%;
+    max-width: em(1440);
+    overflow: hidden;
 }
 .main-header, .main-content, .main-footer {
-    max-width:1200px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
 }
 /* Don't show link behavior*/
 a:visited, a:link {

@@ -18,12 +18,17 @@ $turquoise: #2EC5CE;
 /* FONTS */
 $primaryfont: Manrope;
 $family: sans-serif;
-$base-size:18px;
+$browser-context:16;
 
-@mixin bigfont ($fonts, $family, $fsize) {
-    font: {
-        family: $fonts, $family;
-        size: $fsize;
-    }
+// Functions or Methods generals
+
+// fonts function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
 }
 
+@mixin bigfont ($fonts, $family) {
+    font: {
+        family: $fonts, $family;
+    }
+}

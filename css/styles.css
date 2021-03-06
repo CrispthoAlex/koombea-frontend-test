@@ -6,25 +6,25 @@
 */
 /* Stableshing Fonts */
 @font-face {
-  font-family: Manrope, sans-serif;
+  font-family: Manrope;
   font-weight: bold;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Manrope-VariableFont_wght.woff") format("woff");
+  src: url("../../fonts/Manrope-Bold.woff") format("woff"), url("../../fonts/Manrope-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: Manrope, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Manrope-VariableFont_wght.woff") format("woff");
+  src: url("../../fonts/Manrope-SemiBold.woff") format("woff"), url("../../fonts/Manrope-SemiBold.woff2") format("woff2");
 }
 @font-face {
   font-family: Manrope, sans-serif;
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("../../fonts/Manrope-VariableFont_wght.woff") format("woff");
+  src: url("../../fonts/Manrope-Regular.woff") format("woff"), url("../../fonts/Manrope-Regular.woff2") format("woff2");
 }
 /* General CSS properties */
 *, :after, :before {
@@ -43,18 +43,25 @@ li {
 body {
   color: #18191F;
   font-family: Manrope, sans-serif;
-  font-size: 18px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-  width: 100%;
   display: flex;
   flex-flow: column;
   align-items: center;
+  width: 100%;
+  max-width: 90em;
+  overflow: hidden;
 }
 
 .main-header, .main-content, .main-footer {
-  max-width: 1200px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 /* Don't show link behavior*/
@@ -75,26 +82,33 @@ button:focus {
 SCSS and BEM structure were used on this project
 */
 .main-header {
-  display: flex;
   margin: 0;
   width: 100%;
   position: relative;
+  height: 4.5em;
   box-shadow: 0px 1px 0px #E5E9F2;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .main-header {
     flex-flow: row;
     align-items: center;
-    height: 5em;
     color: #F4F5F7;
     background-color: #8C30F5;
-    border-bottom: 0.2em solid #E5E9F2;
+    border-bottom: 0.21875em solid #E5E9F2;
   }
 }
-@media only screen and (min-width: 770px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .main-header {
+    flex-flow: row;
+    align-items: center;
+    color: #F4F5F7;
+    background-color: #8C30F5;
+    border-bottom: 0.21875em solid #E5E9F2;
+  }
+}
+@media screen and (min-width: 1024px) {
   .main-header {
     justify-content: space-around;
-    height: 4em;
     background-color: #ffffff;
   }
 }
@@ -103,16 +117,23 @@ SCSS and BEM structure were used on this project
 .fixed {
   position: fixed;
   top: 0em;
+  z-index: 1;
 }
 
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 75em;
   position: relative;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-flow: row wrap;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .navbar {
     flex-flow: row wrap;
   }
@@ -126,15 +147,23 @@ SCSS and BEM structure were used on this project
   padding: 0;
   /* Lines behavior Menu Opened */
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .menu-button {
-    transform: scale(1.8);
+    transform: 1.8;
     padding: 0.5rem;
     width: 33%;
     display: block;
   }
 }
-@media only screen and (min-width: 770px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .menu-button {
+    transform: 1.8;
+    padding: 0.5rem;
+    width: 33%;
+    display: block;
+  }
+}
+@media screen and (min-width: 1024px) {
   .menu-button {
     display: none;
   }
@@ -145,7 +174,7 @@ SCSS and BEM structure were used on this project
   stroke-width: 6;
   transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-@media only screen and (min-width: 770px) {
+@media screen and (min-width: 1024px) {
   .menu-button__line {
     transform: scale(0);
   }
@@ -165,7 +194,7 @@ SCSS and BEM structure were used on this project
   stroke-dashoffset: -134;
   stroke-width: 6;
 }
-@media only screen and (min-width: 770px) {
+@media screen and (min-width: 1024px) {
   .menu-button--opened {
     display: none;
   }
@@ -201,20 +230,33 @@ SCSS and BEM structure were used on this project
   font-weight: bold;
   font-size: 0.778em;
   line-height: 1.111em;
-  margin: 0 0.556em;
+  margin: 0 0.625em;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .navigate .navigate-list__item {
-    margin: 25% 0;
+    margin: 1.5625em 0;
+    font-size: 1em;
   }
 }
-@media only screen and (max-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate .navigate-list__item {
+    margin: 1.5625em 0;
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
   .navigate .navigate-list {
     flex-flow: column;
-    height: 10em;
+    height: 16em;
   }
 }
-@media only screen and (max-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate .navigate-list {
+    flex-flow: column;
+    height: 16em;
+  }
+}
+@media screen and (max-width: 768px) {
   .navigate {
     position: absolute;
     order: 4;
@@ -231,9 +273,30 @@ SCSS and BEM structure were used on this project
     transition: 0.7s;
     transform: scale(1);
     z-index: 1;
+    border-radius: 0 0 1.875em 1.875em;
   }
 }
-@media only screen and (min-width: 770px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate {
+    position: absolute;
+    order: 4;
+    top: -2em;
+    transform: scale(0);
+    z-index: -1;
+  }
+  .navigate--opened {
+    flex-flow: row wrap;
+    justify-content: center;
+    top: 4.4em;
+    width: 100%;
+    background-color: #8C30F5;
+    transition: 0.7s;
+    transform: scale(1);
+    z-index: 1;
+    border-radius: 0 0 1.875em 1.875em;
+  }
+}
+@media screen and (min-width: 1024px) {
   .navigate {
     width: auto;
   }
@@ -247,7 +310,12 @@ SCSS and BEM structure were used on this project
   transition: 0.6s;
   width: 110%;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .active {
+    background-color: #474A57;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .active {
     background-color: #474A57;
   }
@@ -258,14 +326,26 @@ SCSS and BEM structure were used on this project
   position: relative;
   justify-content: center;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .logo-header {
     align-self: center;
-    padding: 2% 1em;
+    padding: 0.5em 1em;
     border: 0.25em solid #D6B1FF;
     border-radius: 1.5em;
     background-color: #F4F5F7;
     width: 33%;
+    max-width: 9.375em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .logo-header {
+    align-self: center;
+    padding: 0.5em 1em;
+    border: 0.25em solid #D6B1FF;
+    border-radius: 1.5em;
+    background-color: #F4F5F7;
+    width: 33%;
+    max-width: 9.375em;
   }
 }
 
@@ -287,7 +367,13 @@ SCSS and BEM structure were used on this project
   height: 2.222em;
   font-weight: 700;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .account-buttons__login, .account-buttons__sign-up {
+    margin: 0.3em 0.778em;
+    height: 1.8em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .account-buttons__login, .account-buttons__sign-up {
     margin: 0.3em 0.778em;
     height: 1.8em;
@@ -297,7 +383,12 @@ SCSS and BEM structure were used on this project
   color: #8C30F5;
   background-color: #F1E4FF;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .account-buttons__login {
+    color: #18191F;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
   .account-buttons__login {
     color: #18191F;
   }
@@ -306,16 +397,171 @@ SCSS and BEM structure were used on this project
   color: #ffffff;
   background-color: #8C30F5;
 }
-@media only screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .account-buttons__sign-up {
     color: #8C30F5;
     background-color: #ffffff;
   }
 }
-@media only screen and (max-width: 768px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .account-buttons__sign-up {
+    color: #8C30F5;
+    background-color: #ffffff;
+  }
+}
+@media screen and (max-width: 768px) {
   .account-buttons {
     flex-flow: column;
     width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .account-buttons {
+    flex-flow: column;
+    width: 33%;
+  }
+}
+
+/* MAIN CONTENT */
+.overview {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  max-width: 75em;
+}
+@media screen and (max-width: 768px) {
+  .overview {
+    padding: 5% 0;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .overview {
+    padding: 5% 0;
+    justify-content: space-between;
+  }
+}
+
+.info-page {
+  display: flex;
+  flex-flow: column;
+  width: 50%;
+  align-content: flex-start;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .info-page {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .info-page {
+    padding-left: 1em;
+  }
+}
+.info-page__title {
+  font-size: 3.5em;
+}
+.info-page__title h1 {
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .info-page__title {
+    font-size: 1.5em;
+  }
+}
+.info-page__text {
+  font-size: 1.125em;
+  width: 100%;
+}
+.info-page__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 10.556em;
+  min-width: 3.667em;
+  width: 100%;
+  height: 3.444em;
+  max-height: 10.889em;
+  min-height: 1.556em;
+  background-color: #8C30F5;
+  border-radius: 0.444em;
+  color: #ffffff;
+}
+.info-page__button a {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+@media screen and (max-width: 768px) {
+  .info-page__button a {
+    font-size: 1rem;
+  }
+}
+
+.image {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.image__stats {
+  position: absolute;
+  right: -7.375em;
+}
+@media screen and (max-width: 768px) {
+  .image__stats {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .image__stats {
+    transform: scale(0.65);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .image__stats {
+    width: 100%;
+    max-width: 37em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .image {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.circle-background {
+  position: relative;
+  background: #D6B1FF;
+  border-radius: 100%;
+  content: "";
+  z-index: -1;
+}
+@media screen and (max-width: 768px) {
+  .circle-background {
+    position: absolute;
+    top: -10%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .circle-background {
+    display: none;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .circle-background {
+    width: 40em;
+    height: 40em;
+    min-width: 40em;
+    right: -4%;
   }
 }
 
