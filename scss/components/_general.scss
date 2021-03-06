@@ -57,6 +57,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: em(1440);
+    overflow: hidden;
 }
 .main-header, .main-content, .main-footer {
     display: flex;

@@ -76,7 +76,7 @@
     
     &__stats {
         position:absolute;
-        right: -10%;
+        right: em(-118);
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
