@@ -6,15 +6,13 @@
 .overview {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: 0 8.5%;
     width: 100%;
-    @include responsive-page(smd) {
-        flex-flow: row wrap;
-        justify-content: center;
-    }
+    max-width: em(1200);
+    @include responsive-page(smd) { padding:5% 0; justify-content: center; }
+    @include responsive-page(md) { padding:5% 0; justify-content: space-between;}
 }
 
 .info-page {
@@ -24,61 +22,96 @@
     align-content: flex-start;
     justify-content: center;
     @include responsive-page(smd) {
-        flex-flow: row wrap;
         text-align: center;
+        align-items: center;
         width: 100%;
     }
     &__title{
-        font: { weight: 800; }
+        font-size:em(56);
+        h1 {
+            margin:0;
+        }
         @include responsive-page(smd) {
-            font-size:1.5rem;
+            font-size:em(24);
         }
     }
     &__text {
-        font-size: 1em;
+        font-size: em(18);
+        width: 100%;
     }
     &__button {
-        width: 10.556em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 10.556em;
+        min-width: 3.667em;
+        width:100%;
         height: 3.444em;
+        max-height: 10.889em;
+        min-height: 1.556em;
         background-color: $purple;
-        border-radius: 8px;
+        border-radius: 0.444em;
         color: #ffffff;
-        font: {
-            weight: bold;
-            size:1.111em;
+        a {
+            font: {
+                weight: bold;
+                size:1.4rem;
+            }
+            @include responsive-page(smd) {
+                font: {
+                    size:1rem;
+                }
+            }
+
         }
     }
 }
 
 .image {
-    position: relative;
-    display: flex;
-    width: 50%;
+    position: absolute;
+    display:flex;
+    width: 100%;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    
     &__stats {
-        position: relative;
-        width: 100%;
-        max-height: 26.667em;
-        max-width: 42.667em;
-        transform: scale(1);
-        @include responsive-page(smd) {
-            display: none;
+        position:absolute;
+        right: -10%;
+        @include responsive-page(smd) { display: none; }
+        
+        @include responsive-page(md) { 
+            transform: scale(.65);
         }
+        
+        @include responsive-page(mdtop) { 
+            width: 100%;
+            max-width: em(592);
+        }
+    }
+    @include responsive-page(smd) {
+        position: absolute;
+        margin:0;
+        width: 100%;
     }
 }
 
 .circle-background {
-    position: absolute;
+    position: relative;
     background: $purple800;
     border-radius: 100%;
     content: "";
-    width: 36em;
-    height: 36em;
-    max-width: 36em;
-    right: 0;
     z-index: -1;
     @include responsive-page(smd) {
-        transform: scale(100%);
+        position: absolute;
+        top:-10%;
+    }
+    @include responsive-page(md) {
+        display: none;
+    }
+    @include responsive-page(mdtop) {
+        width: em(640);
+        height: em(640);
+        min-width: em(640);
+        right: -4%;
     }
 }
