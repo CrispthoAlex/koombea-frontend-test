@@ -1,26 +1,27 @@
 /* Define variables and values for website */
 /* COLORS */
 /* FONTS */
+/* Clients Logo Clouds section */
 /** Mixin for media queries
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
 /* Stableshing Fonts */
 @font-face {
-  font-family: Manrope;
+  font-family: "Manrope";
   font-weight: bold;
   font-style: normal;
   font-display: swap;
   src: url("../../fonts/Manrope-Bold.woff") format("woff"), url("../../fonts/Manrope-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: Manrope, sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 500;
   font-style: normal;
   font-display: swap;
   src: url("../../fonts/Manrope-SemiBold.woff") format("woff"), url("../../fonts/Manrope-SemiBold.woff2") format("woff2");
 }
 @font-face {
-  font-family: Manrope, sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -42,7 +43,7 @@ li {
 
 body {
   color: #18191F;
-  font-family: Manrope, sans-serif;
+  font-family: "Manrope", sans-serif;
   display: flex;
   justify-content: center;
 }
@@ -149,7 +150,7 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (max-width: 768px) {
   .menu-button {
-    transform: 1.8;
+    transform: scale(1.8);
     padding: 0.5rem;
     width: 33%;
     display: block;
@@ -157,7 +158,7 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .menu-button {
-    transform: 1.8;
+    transform: scale(1.8);
     padding: 0.5rem;
     width: 33%;
     display: block;
@@ -429,18 +430,17 @@ SCSS and BEM structure were used on this project
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  padding: 5% 0;
   width: 100%;
   max-width: 75em;
 }
 @media screen and (max-width: 768px) {
   .overview {
-    padding: 5% 0;
     justify-content: center;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .overview {
-    padding: 5% 0;
     justify-content: space-between;
   }
 }
@@ -512,6 +512,7 @@ SCSS and BEM structure were used on this project
 }
 .image__stats {
   position: absolute;
+  filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
   right: -7.375em;
 }
 @media screen and (max-width: 768px) {
@@ -562,6 +563,127 @@ SCSS and BEM structure were used on this project
     height: 40em;
     min-width: 40em;
     right: -4%;
+  }
+}
+
+/* Logo clouds of Clients */
+.our-clients {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0;
+  padding: 4% 0;
+  background-color: #F4F5F7;
+  width: 100%;
+  max-width: 90em;
+}
+
+.info-page--clients {
+  padding: 0;
+  align-items: center;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .info-page--clients {
+    padding: 0 0.0625em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .info-page--clients {
+    align-items: center;
+  }
+}
+.info-page__title--clients {
+  font-size: 2.5em;
+}
+@media screen and (max-width: 768px) {
+  .info-page__title--clients {
+    font-size: 1.25em;
+  }
+}
+
+.logo-clients {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-flow: row wrap;
+}
+@media screen and (min-width: 1024px) {
+  .logo-clients {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: 12.25em 12.25em 12.25em 12.25em 12.25em;
+    grid-template-rows: auto;
+    grid-template-areas: "logo1 logo2 logo4 logo7 logo9" "logo1 . logo5 . logo9" "logo1 logo3 logo6 logo8 logo9";
+  }
+}
+.logo-clients__capsule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
+  border-radius: 1em;
+  max-height: 6em;
+  max-width: 10.625em;
+}
+@media screen and (max-width: 768px) {
+  .logo-clients__capsule {
+    margin: 0.5em;
+    width: 10.625em;
+    height: 3em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .logo-clients__capsule {
+    margin: 0.625em;
+    width: 10.625em;
+    height: 4em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .logo-clients__capsule {
+    margin: 0.75em;
+    width: 10.625em;
+    height: 6em;
+  }
+  .logo-clients__capsule:nth-child(1) {
+    grid-area: logo1;
+  }
+  .logo-clients__capsule:nth-child(2) {
+    grid-area: logo2;
+    position: absolute;
+    bottom: -50%;
+  }
+  .logo-clients__capsule:nth-child(3) {
+    grid-area: logo3;
+    position: absolute;
+    top: -50%;
+  }
+  .logo-clients__capsule:nth-child(4) {
+    grid-area: logo4;
+  }
+  .logo-clients__capsule:nth-child(5) {
+    grid-area: logo5;
+  }
+  .logo-clients__capsule:nth-child(6) {
+    grid-area: logo6;
+  }
+  .logo-clients__capsule:nth-child(7) {
+    grid-area: logo7;
+    position: absolute;
+    bottom: -50%;
+  }
+  .logo-clients__capsule:nth-child(8) {
+    grid-area: logo8;
+    position: absolute;
+    top: -50%;
+  }
+  .logo-clients__capsule:nth-child(9) {
+    grid-area: logo9;
   }
 }
 

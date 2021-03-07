@@ -48,7 +48,7 @@ SCSS and BEM structure were used on this project
     cursor: pointer;
     padding: 0;
     @mixin smd-md-behavior (){
-        transform:1.8;
+        transform: scale(1.8);
         padding: .5rem;
         width: 33%;
         display: block;

@@ -2,17 +2,18 @@
 
 // ==== Make mixin for general properties =====//
 
-// Presentation section
+// Overview/Hero section - Presentation
 .overview {
     position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    padding:5% 0;
     width: 100%;
     max-width: em(1200);
-    @include responsive-page(smd) { padding:5% 0; justify-content: center; }
-    @include responsive-page(md) { padding:5% 0; justify-content: space-between;}
+    @include responsive-page(smd) { justify-content: center; }
+    @include responsive-page(md) { justify-content: space-between;}
 }
 
 .info-page {
@@ -26,7 +27,7 @@
         align-items: center;
         width: 100%;
     }
-    @include responsive-page(md) {padding-left: em(16);    }
+    @include responsive-page(md) {padding-left: em(16); }
     &__title{
         font-size:em(56);
         h1 {
@@ -75,6 +76,7 @@
     
     &__stats {
         position:absolute;
+        filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));;
         right: em(-118);
         @include responsive-page(smd) { display: none; }
         
@@ -112,5 +114,85 @@
         height: em(640);
         min-width: em(640);
         right: -4%;
+    }
+}
+
+/* Logo clouds of Clients */
+.our-clients {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 0;
+    padding: 4% 0;
+    background-color: $gray100;
+    width: 100%;
+    max-width: em(1440);
+}
+.info-page {
+    &--clients {
+        padding: 0;
+        align-items: center;
+        text-align: center;
+        @include responsive-page (smd) {
+            padding: 0 em(1);
+        }
+        @include responsive-page (md) {
+            align-items: center;
+        }
+    }
+    &__title {
+        &--clients {
+            font-size: em(40);
+            @include responsive-page(smd) {font-size: em(20); }
+        }
+    }
+}
+
+.logo-clients {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-flow: row wrap;
+
+    @include responsive-page(mdtop) {
+        // Contruction of grid for clients logos
+        display: grid;
+        margin-top: em(32);
+        grid-template-columns: em(196) em(196) em(196) em(196) em(196);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "logo1 logo2 logo4 logo7 logo9"
+            "logo1 . logo5 . logo9"
+            "logo1 logo3 logo6 logo8 logo9";
+    }
+    &__capsule {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
+        border-radius: em(16);
+        max-height: em(96);
+        max-width: em(170);
+        
+        @include responsive-page (smd) { @include logo-clouds(8, 170, 48); }
+        @include responsive-page (md) { @include logo-clouds(10, 170, 64); }
+        @include responsive-page (mdtop) {
+            @include logo-clouds(12, 170, 96);
+            
+            // Grid for clients logos build
+            &:nth-child(1) {grid-area: logo1;}
+            &:nth-child(2) {grid-area: logo2; @include logo-up-prop }
+            &:nth-child(3) {grid-area: logo3; @include logo-dwn-prop }
+            &:nth-child(4) {grid-area: logo4;}
+            &:nth-child(5) {grid-area: logo5;}
+            &:nth-child(6) {grid-area: logo6;}
+            &:nth-child(7) {grid-area: logo7; @include logo-up-prop}
+            &:nth-child(8) {grid-area: logo8; @include logo-dwn-prop}
+            &:nth-child(9) {grid-area: logo9;}
+        }
     }
 }
