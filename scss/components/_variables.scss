@@ -16,11 +16,11 @@ $pastel-green: #C1E5C0;
 $turquoise: #2EC5CE;
 
 /* FONTS */
-$primaryfont: Manrope;
+$primaryfont: "Manrope";
 $family: sans-serif;
 $browser-context:16;
 
-// Functions or Methods generals
+//  Generals Functions or Methods
 
 // fonts function to convert px to em
 @function em($pixels, $context: $browser-context) {
@@ -32,3 +32,20 @@ $browser-context:16;
         family: $fonts, $family;
     }
 }
+
+/* Clients Logo Clouds section */
+@mixin logo-clouds($margin, $width, $height) {
+    margin: em($margin);
+    width: em($width);
+    height: em($height);
+}
+
+@mixin logo-up-prop {
+    position: absolute;
+    bottom:-50%;
+}
+@mixin logo-dwn-prop {
+    position: absolute;
+    top:-50%;
+}
+
