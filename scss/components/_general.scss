@@ -3,7 +3,7 @@
     font: {
         family: $primaryfont;
         weight: bold;
-        style: normal;
+        style: bold;
         display: swap;
     }
     src: url('../../fonts/Manrope-Bold.woff') format('woff'),
@@ -41,7 +41,7 @@ body, ul, li, .container {
     margin:0;
     padding: 0;
 }
-li {
+ul, li {
     list-style: none;
 }
 body {
