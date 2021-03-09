@@ -1,15 +1,17 @@
+@charset "UTF-8";
 /* Define variables and values for website */
 /* COLORS */
 /* FONTS */
-/* Clients Logo Clouds section */
 /** Mixin for media queries
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
+/* Properties basic for sections */
+/* Clients Logo Clouds section */
 /* Stableshing Fonts */
 @font-face {
   font-family: "Manrope";
   font-weight: bold;
-  font-style: normal;
+  font-style: bold;
   font-display: swap;
   src: url("../../fonts/Manrope-Bold.woff") format("woff"), url("../../fonts/Manrope-Bold.woff2") format("woff2");
 }
@@ -37,7 +39,7 @@ body, ul, li, .container {
   padding: 0;
 }
 
-li {
+ul, li {
   list-style: none;
 }
 
@@ -448,9 +450,10 @@ SCSS and BEM structure were used on this project
 .info-page {
   display: flex;
   flex-flow: column;
-  width: 50%;
   align-content: flex-start;
   justify-content: center;
+  margin-bottom: 3.75em;
+  width: 50%;
 }
 @media screen and (max-width: 768px) {
   .info-page {
@@ -467,7 +470,7 @@ SCSS and BEM structure were used on this project
 .info-page__title {
   font-size: 3.5em;
 }
-.info-page__title h1 {
+.info-page__title h1, .info-page__title h2 {
   margin: 0;
 }
 @media screen and (max-width: 768px) {
@@ -570,12 +573,15 @@ SCSS and BEM structure were used on this project
 .our-clients {
   position: relative;
   display: flex;
-  flex-flow: column;
+  justify-content: space-between;
   align-items: center;
   margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: column;
   padding: 4% 0;
   background-color: #F4F5F7;
-  width: 100%;
   max-width: 90em;
 }
 
@@ -586,7 +592,7 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (max-width: 768px) {
   .info-page--clients {
-    padding: 0 0.0625em;
+    padding: 0 1em;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
@@ -684,6 +690,300 @@ SCSS and BEM structure were used on this project
   }
   .logo-clients__capsule:nth-child(9) {
     grid-area: logo9;
+  }
+}
+
+/* Multiple section */
+.multiple {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: column;
+}
+@media screen and (min-width: 1024px) {
+  .multiple {
+    min-height: 58.1875em;
+  }
+}
+
+.info-page--multiple {
+  padding: 0;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .info-page--multiple {
+    padding: 0 1em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .info-page--multiple {
+    align-items: center;
+  }
+}
+.info-page__title--multiple {
+  width: 90%;
+  font-size: 2.5em;
+}
+@media screen and (max-width: 768px) {
+  .info-page__title--multiple {
+    font-size: 1.25em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .info-page__title--multiple {
+    width: 50%;
+  }
+}
+
+.products-description {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .products-description {
+    flex-flow: column;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .products-description {
+    flex-flow: column;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description {
+    flex-flow: row;
+    min-height: 39.1875em;
+  }
+}
+.products-description__products {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  /* Geenral properties of images */
+  /* Individual properties of image in 1024px */
+}
+@media screen and (max-width: 768px) {
+  .products-description__products {
+    flex-flow: row;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .products-description__products {
+    flex-flow: row;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description__products {
+    flex-flow: column;
+    width: 50%;
+  }
+}
+.products-description__products--perfum, .products-description__products--lipstick, .products-description__products--face-wash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .products-description__products--perfum, .products-description__products--lipstick, .products-description__products--face-wash {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .products-description__products--perfum, .products-description__products--lipstick, .products-description__products--face-wash {
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description__products--perfum, .products-description__products--lipstick, .products-description__products--face-wash {
+    width: min-content;
+  }
+}
+@media screen and (max-width: 768px) {
+  .products-description__products--perfum img, .products-description__products--lipstick img, .products-description__products--face-wash img {
+    box-shadow: 0px 0px 30px 10px #D6B1FF;
+    border-radius: 50%;
+    max-width: 8.4375em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .products-description__products--perfum img, .products-description__products--lipstick img, .products-description__products--face-wash img {
+    box-shadow: 0px 0px 30px 10px #D9DBE1;
+    border-radius: 25%;
+    max-width: 12.5em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description__products--perfum {
+    right: -5.625em;
+    top: 0;
+  }
+  .products-description__products--perfum::after {
+    position: absolute;
+    content: " ";
+    background-color: #A0DCFF;
+    border-radius: 50%;
+    width: 4.5em;
+    height: 4.5em;
+    right: -2.125em;
+    bottom: 3.875em;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description__products--lipstick {
+    position: absolute;
+    left: 3.75em;
+    top: 15em;
+  }
+  .products-description__products--lipstick::after {
+    position: absolute;
+    content: " ";
+    background-color: #FFC3D8;
+    border-radius: 50%;
+    width: 4.5em;
+    height: 4.5em;
+    left: -2.25em;
+    bottom: 4.0625em;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .products-description__products--face-wash {
+    left: 2.5em;
+    top: 5em;
+  }
+  .products-description__products--face-wash::after {
+    position: absolute;
+    content: " ";
+    background-color: #C1E5C0;
+    border-radius: 50%;
+    width: 4.5em;
+    height: 4.5em;
+    right: -2.125em;
+    bottom: -2.125em;
+    z-index: -1;
+  }
+}
+.products-description__text {
+  position: relative;
+  display: flex;
+  margin-top: 1.25em;
+  width: 100%;
+}
+@media screen and (min-width: 1024px) {
+  .products-description__text {
+    margin: 0;
+    width: 50%;
+  }
+}
+
+.text-products {
+  display: flex;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .text-products {
+    flex-flow: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .text-products {
+    flex-flow: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text-products {
+    flex-flow: column;
+    align-items: center;
+    padding-left: 9%;
+  }
+}
+.text-products__item {
+  display: flex;
+  text-align: center;
+  flex-flow: column;
+}
+@media screen and (max-width: 768px) {
+  .text-products__item {
+    justify-content: center;
+    width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .text-products__item {
+    margin: 0 0.3125em;
+    width: 33%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text-products__item {
+    text-align: initial;
+    width: 100%;
+  }
+}
+.text-products__item h5 {
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .text-products__item h5 {
+    font-size: 1.125em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .text-products__item h5 {
+    font-size: 1.25em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text-products__item h5 {
+    padding-left: 0.9375em;
+    font-size: 1.5em;
+  }
+  .text-products__item h5::before {
+    position: relative;
+    content: "•";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: #C1E5C0;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+.text-products__item p {
+  line-height: 2em;
+}
+@media screen and (max-width: 768px) {
+  .text-products__item p {
+    display: none;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .text-products__item p {
+    padding: 0 0.625em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .text-products__item p {
+    padding: 0;
+    width: 90%;
+    margin-bottom: 2.5em;
   }
 }
 

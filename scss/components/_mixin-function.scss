@@ -1,0 +1,40 @@
+//  Generals Functions or Methods
+
+// fonts function to convert px to em
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+@mixin bigfont ($fonts, $family) {
+    font: {
+        family: $fonts, $family;
+    }
+}
+
+/* Properties basic for sections */
+@mixin basic-section {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding:5% 0;
+    width: 100%;
+    max-width: em(1200);
+}
+
+/* Clients Logo Clouds section */
+@mixin logo-clouds($margin, $width, $height) {
+    margin: em($margin);
+    width: em($width);
+    height: em($height);
+}
+
+@mixin logo-up-prop {
+    position: absolute;
+    bottom:-50%;
+}
+@mixin logo-dwn-prop {
+    position: absolute;
+    top:-50%;
+}
