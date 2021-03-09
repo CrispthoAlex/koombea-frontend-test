@@ -390,6 +390,8 @@
     padding: 0;
     background-color: $turquoise100;
     @include responsive-page(smd) { flex-flow: column; }
+    @include responsive-page(md) { height: 580px; }
+    @include responsive-page(mdtop) { height: 628px; }
 }
 
 .left-container {
@@ -408,6 +410,7 @@
 .info-page {
     &--testimonial {
         width:65%;
+        margin: 0;
         @include responsive-page(smd) {
             margin:em(20);
             padding: 0 em(10);
@@ -431,6 +434,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 50%;
+    margin: 0;
     @include responsive-page(smd) { 
         justify-content: center;
         width: 100%;
@@ -444,7 +448,7 @@
     background-color: #ffffff;
     padding: em(40);
     box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
-    margin: em(32) 0;
+    margin: 32px 0;
     max-width: em(574);
     @include responsive-page(smd) { padding: em(20); margin: 0; }
 
@@ -453,6 +457,7 @@
         position: relative;
         width: max-content;
         align-self: flex-end;
+        margin-bottom: 24px;
     }
 
     &__client {
@@ -484,9 +489,12 @@
 
         }
         .client-feedback {
-            line-height: em(32);
-            @include responsive-page(smd) { line-height: em(20); }
-            @include responsive-page(md) { line-height: em(24); }
+            line-height: 32px;
+            @include responsive-page(smd) { line-height: 20px; }
+            @include responsive-page(md) { line-height: 24px; }
+            p {
+                margin-bottom: 48px;
+            }
         }
         .client-logo {
             img {

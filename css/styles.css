@@ -1007,6 +1007,16 @@ SCSS and BEM structure were used on this project
     flex-flow: column;
   }
 }
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .testimonial {
+    height: 580px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .testimonial {
+    height: 628px;
+  }
+}
 
 .left-container {
   position: relative;
@@ -1025,6 +1035,7 @@ SCSS and BEM structure were used on this project
 
 .info-page--testimonial {
   width: 65%;
+  margin: 0;
 }
 @media screen and (max-width: 768px) {
   .info-page--testimonial {
@@ -1047,6 +1058,7 @@ SCSS and BEM structure were used on this project
   align-items: center;
   justify-content: flex-start;
   width: 50%;
+  margin: 0;
 }
 @media screen and (max-width: 768px) {
   .right-container {
@@ -1062,7 +1074,7 @@ SCSS and BEM structure were used on this project
   background-color: #ffffff;
   padding: 2.5em;
   box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
-  margin: 2em 0;
+  margin: 32px 0;
   max-width: 35.875em;
 }
 @media screen and (max-width: 768px) {
@@ -1076,6 +1088,7 @@ SCSS and BEM structure were used on this project
   position: relative;
   width: max-content;
   align-self: flex-end;
+  margin-bottom: 24px;
 }
 .feedback-section__client {
   display: flex;
@@ -1106,17 +1119,20 @@ SCSS and BEM structure were used on this project
   margin: auto 0;
 }
 .feedback-section__client .client-feedback {
-  line-height: 2em;
+  line-height: 32px;
 }
 @media screen and (max-width: 768px) {
   .feedback-section__client .client-feedback {
-    line-height: 1.25em;
+    line-height: 20px;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .feedback-section__client .client-feedback {
-    line-height: 1.5em;
+    line-height: 24px;
   }
+}
+.feedback-section__client .client-feedback p {
+  margin-bottom: 48px;
 }
 .feedback-section__client .client-logo img {
   width: 140px;
