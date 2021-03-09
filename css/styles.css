@@ -479,7 +479,7 @@ SCSS and BEM structure were used on this project
   }
 }
 .info-page__text {
-  font-size: 1.125em;
+  font-size: 18px;
   width: 100%;
 }
 .info-page__button {
@@ -985,6 +985,156 @@ SCSS and BEM structure were used on this project
     width: 90%;
     margin-bottom: 2.5em;
   }
+}
+
+/* Testimonial section */
+.testimonial {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: row;
+  max-width: 90em;
+  padding: 0;
+  background-color: #D5FAFC;
+}
+@media screen and (max-width: 768px) {
+  .testimonial {
+    flex-flow: column;
+  }
+}
+
+.left-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2EC5CE;
+  width: 50%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .left-container {
+    width: 100%;
+  }
+}
+
+.info-page--testimonial {
+  width: 65%;
+}
+@media screen and (max-width: 768px) {
+  .info-page--testimonial {
+    margin: 1.25em;
+    padding: 0 0.625em;
+  }
+}
+.info-page__title--testimonial h2 {
+  font-size: 42px;
+  line-height: 64px;
+}
+@media screen and (max-width: 768px) {
+  .info-page__title--testimonial h2 {
+    line-height: 40px;
+  }
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .right-container {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+.feedback-section {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  background-color: #ffffff;
+  padding: 2.5em;
+  box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
+  margin: 2em 0;
+  max-width: 35.875em;
+}
+@media screen and (max-width: 768px) {
+  .feedback-section {
+    padding: 1.25em;
+    margin: 0;
+  }
+}
+.feedback-section .quotes-image {
+  display: flex;
+  position: relative;
+  width: max-content;
+  align-self: flex-end;
+}
+.feedback-section__client {
+  display: flex;
+  flex-flow: column;
+  margin: 0;
+}
+.feedback-section__client .client-who-is {
+  display: flex;
+  flex-basis: auto;
+}
+.feedback-section__client .client-who-is img {
+  width: 3.5em;
+  height: 3.5em;
+}
+.feedback-section__client .client-name {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  margin-left: 0.625em;
+}
+.feedback-section__client .client-name h5 {
+  font-size: 1.125em;
+  line-height: 1.75em;
+  margin: auto 0;
+}
+.feedback-section__client .client-name p {
+  font-size: 0.875em;
+  margin: auto 0;
+}
+.feedback-section__client .client-feedback {
+  line-height: 2em;
+}
+@media screen and (max-width: 768px) {
+  .feedback-section__client .client-feedback {
+    line-height: 1.25em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .feedback-section__client .client-feedback {
+    line-height: 1.5em;
+  }
+}
+.feedback-section__client .client-logo img {
+  width: 140px;
+}
+.feedback-section__arrows {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 2.5em;
+  height: 0.875em;
+  font-weight: 700;
+  align-self: flex-end;
+  bottom: 1.875em;
+}
+.feedback-section__arrows .previous:hover, .feedback-section__arrows .next:hover {
+  color: #ffffff;
+  background-color: #8C30F5;
 }
 
 /*# sourceMappingURL=styles.css.map */

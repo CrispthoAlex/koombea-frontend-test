@@ -31,10 +31,8 @@
             font-size:em(24);
         }
     }
-    &__text {
-        font-size: em(18);
-        width: 100%;
-    }
+    &__text { font-size: 18px; width: 100%; }
+
     &__button {
         display: flex;
         align-items: center;
@@ -384,4 +382,131 @@
     }
 }
 
+/* Testimonial section */
+.testimonial {
+    @include basic-section ;
+    flex-flow: row;
+    max-width: em(1440);
+    padding: 0;
+    background-color: $turquoise100;
+    @include responsive-page(smd) { flex-flow: column; }
+}
+
+.left-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $turquoise;
+    width: 50%;
+    height: 100%;
+    @include responsive-page(smd) { 
+        width: 100%; 
+    }
+}
+
+.info-page {
+    &--testimonial {
+        width:65%;
+        @include responsive-page(smd) {
+            margin:em(20);
+            padding: 0 em(10);
+        }
+    }
+    &__title {
+        &--testimonial { 
+            h2 {
+                font-size: 42px;
+                line-height: 64px;
+                @include responsive-page(smd) {
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}
+
+.right-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50%;
+    @include responsive-page(smd) { 
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.feedback-section {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    background-color: #ffffff;
+    padding: em(40);
+    box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
+    margin: em(32) 0;
+    max-width: em(574);
+    @include responsive-page(smd) { padding: em(20); margin: 0; }
+
+    .quotes-image {
+        display: flex;
+        position: relative;
+        width: max-content;
+        align-self: flex-end;
+    }
+
+    &__client {
+        display: flex;
+        flex-flow: column;
+        margin: 0;
+        .client-who-is {
+            display: flex;
+            flex-basis: auto;
+            img {
+                width: em(56);
+                height: em(56);
+            }
+        }
+        .client-name {
+            display: flex;
+            flex-flow: column;
+            align-items: stretch;
+            margin-left:em(10);
+            h5 {
+                font-size: em(18);
+                line-height: em(28);
+                margin:auto 0;
+            }
+            p {
+                font-size: em(14);
+                margin:auto 0;
+            }
+
+        }
+        .client-feedback {
+            line-height: em(32);
+            @include responsive-page(smd) { line-height: em(20); }
+            @include responsive-page(md) { line-height: em(24); }
+        }
+        .client-logo {
+            img {
+                width: 140px;
+            }
+        }
+    }
+    &__arrows {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: em(40);
+        height: em(14);
+        font-weight: 700;
+        align-self: flex-end;
+        bottom:em(30);
+        .previous, .next {
+            &:hover { color: #ffffff; background-color: $purple;}
+        }
+    }
+}
 
