@@ -554,3 +554,85 @@
         }
     }
 }
+
+/* Single section */
+.single {
+    @include basic-section ;
+
+    max-width: em(1440);
+    max-height: em(760);
+    padding: 0;
+    background: no-repeat url(../image/single-cover-opt.png);
+    
+    @include responsive-page(smd) {
+        justify-content: center;
+        height: em(380);
+    }
+    @include responsive-page(mdtop) {
+        height: em(760);
+    }
+}
+
+.single-content {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    width: em(460);
+    background-color: #ffffff;
+    
+    @include responsive-page(smd) {
+        padding: em(16);
+        height: em(300);
+    }
+    @include responsive-page(md) { 
+        padding: em(44);
+        height: em(480);
+    }
+    @include responsive-page(mdtop) { 
+        padding: 64px;
+        height: em(540);
+        left: 60%;
+    }
+
+    &__title {
+        font-size: 40px;
+        line-height: 54px;
+        margin: 0;
+        @include responsive-page(smd) { line-height: 20px; }
+        @include responsive-page(md) { line-height: 24px; }
+    }
+    &__text {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 32px;
+        margin-bottom: em(40);
+        
+        @include responsive-page(smd) {
+            line-height: 24px;
+            margin-bottom: em(20);
+        }
+        @include responsive-page(md) { line-height: 32px; }
+    }
+    &__link {
+        display: flex;
+        color: $purple;
+
+        .watch-video {
+            position: relative;
+            left:60px;
+            &::before {
+                content:"";
+                position: absolute;
+                top: 20 px;
+                margin-left: -18px;
+                border-width: 8px;
+                border-style: solid;
+                border-color:  transparent  transparent  transparent $purple;
+            }
+
+        }
+    }
+}
+
+

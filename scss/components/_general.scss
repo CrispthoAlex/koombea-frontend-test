@@ -1,13 +1,13 @@
 /* Stableshing Fonts */
-@font-face { // Normal font
+@font-face {
     font: {
         family: $primaryfont;
         weight: bold;
-        style: bold;
+        style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-Bold.woff') format('woff'),
-    url('../../fonts/Manrope-Bold.woff2') format('woff2');
+    src: url('../fonts/Manrope-Bold.woff') format('woff'),
+    url('../fonts/Manrope-Bold.woff2') format('woff2');
 }
 
 @font-face {
@@ -17,8 +17,8 @@
         style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-SemiBold.woff') format('woff'),
-    url('../../fonts/Manrope-SemiBold.woff2') format('woff2');
+    src: url('../fonts/Manrope-Medium.woff') format('woff'),
+    url('../fonts/Manrope-Medium.woff2') format('woff2');
 }
 
 @font-face {
@@ -28,8 +28,8 @@
         style: normal;
         display: swap;
     }
-    src: url('../../fonts/Manrope-Regular.woff') format('woff'),
-    url('../../fonts/Manrope-Regular.woff2') format('woff2');
+    src: url('../fonts/Manrope-Regular.woff') format('woff'),
+    url('../fonts/Manrope-Regular.woff2') format('woff2');
 }
 
 /* General CSS properties */
