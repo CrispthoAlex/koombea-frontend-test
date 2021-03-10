@@ -480,6 +480,7 @@ SCSS and BEM structure were used on this project
 }
 .info-page__text {
   font-size: 18px;
+  line-height: 32px;
   width: 100%;
 }
 .info-page__button {
@@ -589,6 +590,7 @@ SCSS and BEM structure were used on this project
   padding: 0;
   align-items: center;
   text-align: center;
+  margin: 0;
 }
 @media screen and (max-width: 768px) {
   .info-page--clients {
@@ -1151,6 +1153,47 @@ SCSS and BEM structure were used on this project
 .feedback-section__arrows .previous:hover, .feedback-section__arrows .next:hover {
   color: #ffffff;
   background-color: #8C30F5;
+}
+
+/* Stats Section */
+.stats {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: row wrap;
+}
+@media screen and (max-width: 768px) {
+  .stats {
+    padding: 0 1em;
+  }
+}
+.stats__info {
+  display: block;
+  border-left: solid #8C30F5;
+  padding-left: 1em;
+  width: 100%;
+  min-width: 10em;
+  max-width: 15.9375em;
+}
+@media screen and (max-width: 768px) {
+  .stats__info {
+    margin-bottom: 1em;
+    width: 10em;
+  }
+}
+.stats__info h3 {
+  font-size: 28px;
+  line-height: 40px;
+  margin: 0;
+}
+.stats__info p {
+  line-height: 26px;
+  margin: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
