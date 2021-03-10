@@ -1248,6 +1248,7 @@ SCSS and BEM structure were used on this project
     padding: 64px;
     height: 33.75em;
     left: 60%;
+    bottom: -15%;
   }
 }
 .single-content__title {
@@ -1298,6 +1299,114 @@ SCSS and BEM structure were used on this project
   border-width: 8px;
   border-style: solid;
   border-color: transparent transparent transparent #8C30F5;
+}
+
+/* CTA section */
+.cta-section {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: column;
+  background-color: #8C30F5;
+  max-width: 90em;
+  max-height: 33.75em;
+}
+@media screen and (max-width: 768px) {
+  .cta-section {
+    height: 28.75em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cta-section {
+    height: 33.75em;
+  }
+}
+
+.info-page--cta-section {
+  padding: 0;
+  align-items: center;
+  width: 80%;
+  margin: 0 0 6%;
+}
+@media screen and (max-width: 768px) {
+  .info-page--cta-section {
+    width: 100%;
+  }
+}
+.info-page__title--cta-section {
+  text-align: center;
+  font-size: 46px;
+  line-height: 74px;
+  padding: 0;
+  margin: 0 0 5%;
+  color: #ffffff;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .info-page__title--cta-section {
+    font-size: 24px;
+    line-height: 44px;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .info-page__title--cta-section {
+    font-size: 32px;
+    line-height: 60px;
+  }
+}
+.info-page__button--cta-section {
+  color: #8C30F5;
+  background-color: #ffffff;
+  max-width: 15em;
+}
+
+.hightlights {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 82.5%;
+}
+.hightlights__list {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  font-size: 14px;
+  color: #ffffff;
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .hightlights__list {
+    flex-flow: column;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .hightlights__list {
+    flex-flow: column;
+    align-items: center;
+  }
+}
+.hightlights__list .highlights-item {
+  position: relative;
+  max-width: 18.75em;
+  margin-bottom: 20px;
+  padding-left: 0px;
+}
+@media screen and (min-width: 1024px) {
+  .hightlights__list .highlights-item {
+    width: 18.75em;
+  }
+}
+.hightlights__list .highlights-item:before {
+  content: url("../image/highlights-icon-opt.svg");
+  position: absolute;
+  top: 0;
+  margin-left: -35px;
 }
 
 /*# sourceMappingURL=styles.css.map */

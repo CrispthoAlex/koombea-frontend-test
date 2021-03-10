@@ -593,6 +593,7 @@
         padding: 64px;
         height: em(540);
         left: 60%;
+        bottom: -15%;
     }
 
     &__title {
@@ -635,4 +636,93 @@
     }
 }
 
+/* CTA section */
 
+.cta-section {
+    @include basic-section ;
+    flex-flow: column;
+    background-color: $purple;
+    max-width: em(1440);
+    max-height: em(540);
+    @include responsive-page(smd) { height: em(460);}
+    @include responsive-page(mdtop) { height: em(540); }
+}
+
+.info-page {
+    &--cta-section {
+        padding: 0;
+        align-items: center;
+        width: 80%;
+        margin: 0 0 6%;
+
+        @include responsive-page(smd) { width: 100%; }
+    }
+    &__title {
+
+        &--cta-section {
+            text-align: center;
+            font-size: 46px;
+            line-height: 74px;
+            padding: 0;
+            margin: 0 0 5%;
+            color: #ffffff;
+            width: 100%;
+            
+            @include responsive-page(smd) {
+                font-size: 24px;
+                line-height: 44px;
+            }
+            @include responsive-page(md) {
+                font-size: 32px;
+                line-height: 60px;
+            }
+        }
+    }
+    &__button {
+        &--cta-section {
+            color: $purple;
+            background-color: #ffffff;
+            max-width:em(240);
+        }
+    }
+}
+
+.hightlights {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82.5%;
+    &__list {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        font-size: 14px;
+        color: #ffffff;
+        width: 100%;
+        
+        @include responsive-page(smd) {
+            flex-flow: column;
+            align-items: center;
+        }
+        @include responsive-page(md) {
+            flex-flow: column;
+            align-items: center;
+        }
+
+        .highlights-item {
+            position: relative;
+            max-width: em(300);
+            margin-bottom: 20px;
+            padding-left: 0px;
+        
+            @include responsive-page(mdtop) { width: em(300); }
+            
+            &:before {
+                content: url('../image/highlights-icon-opt.svg');
+                position: absolute;
+                top: 0;
+                margin-left: -35px;
+            }
+        }
+    }
+}
