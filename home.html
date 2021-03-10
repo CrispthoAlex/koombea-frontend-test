@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="description" content="This landing page is a test created for koombea inc Bootcamp.">
 
     <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon-landify-32x32.png">
-    <title>Koombea | Landing page test</title>
+    <title>Landing page test</title>
     <link rel="canonical" href="https://www.landify.design/">
     <!-- Styles -->
     <link rel="stylesheet" href="./css/styles.css">
@@ -100,25 +100,25 @@
             <!-- Client products -->
             <section class="multiple">
                 <div class="info-page info-page--multiple">
-                    <div class="info-page__title info-page__title--multiple">
+                    <div class="info-page__title info-page__title--multiple" aria-label="<multiple title">
                         <h2>
                             Enter the world of all fashion trends
                         </h2>
                     </div>
                 </div>
                 <div class="products-description">
-                    <div class="products-description__products">
-                        <div class="products-description__products--perfum">
+                    <div class="products-description__products" aria-label="Products images">
+                        <div class="products-description__products products-description__products--perfum">
                             <img src="./image/perfume-opt.png" alt="Perfum image" aria-label="Perfum image">
                         </div>
-                        <div class="products-description__products--lipstick">
+                        <div class="products-description__products products-description__products--lipstick">
                             <img src="./image/lipsctick-opt.png" alt="Lipstick image" aria-label="Lipstick image">
                         </div>
-                        <div class="products-description__products--face-wash">
+                        <div class="products-description__products products-description__products--face-wash">
                             <img src="./image/face-wash-opt.png" alt="Face wash image" aria-label="Face wash image">
                         </div>
                     </div>
-                    <div class="products-description__text">
+                    <div class="products-description__text" aria-label="Products text">
                         <ul class="text-products">
                             <li class="text-products__item">
                                 <h5>Perfum</h5>
@@ -143,19 +143,46 @@
                 </div>
             </section>
             <!-- Happy Customers -->
-            <section class="happy-customers">
-                <div class="info-page">
-                    <div class="info-page__title">
-                        <h2 class="info-page__title--happy-customer">Happy Customers</h2>
-                    </div>
-                    <div class="info-page__text">
-                        <p class="info-page__text--customer-feedback">
-                            Feedback from these happy customers helps us in reaching the heights
-                        </p>
+            <section class="testimonial">
+                <div class="left-container">
+                    <div class="info-page info-page--testimonial">
+                        <div class="info-page__title info-page__title--testimonial">
+                            <h2>Happy Customers</h2>
+                        </div>
+                        <div class="info-page__text info-page__text--testimonial">
+                            <p>
+                                Feedback from these happy customers helps us in reaching the heights
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="feedback-slider">
-                    CUSTOMERS FEEDBACK
+                <div class="right-container">
+                    <div class="feedback-section" aria-label="Clients feedback">
+                        <div class="quotes-image">
+                            <img src="./image/quotes-opt.svg" alt="Quotes">
+                        </div>
+                        <div class="feedback-section__client">
+                            <div class="client-who-is">
+                                <img src="./image/client-opt.png" alt="Client photo">
+                                <div class="client-name">
+                                    <h5>Jenny Wilson</h5>
+                                    <p>Vice President</p>
+                                </div>
+                            </div>
+                            <div class="client-feedback">
+                                <p>
+                                    We had an incredible experience working with Landify and were impressed they made such a big difference in only three weeks. Our team is so grateful for the wonderful improvements they made and their ability to get familiar with the product concept so quickly. It acted as a catalyst to take our design to the next level and get more eyes on our product.
+                                </p>
+                            </div>
+                            <div class="client-logo">
+                                <img src="./image/client-logo-opt.png" alt="">
+                            </div>
+                        </div>
+                        <div class="feedback-section__arrows">
+                            <span class="previous"> &lt; </span>
+                            <span class="next"> &gt; </span>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- Ratings company -->
