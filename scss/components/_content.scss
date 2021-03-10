@@ -526,16 +526,21 @@
 /* Stats Section */
 .stats {
     @include basic-section;
-
-    @include responsive-page(mdtop) {
-        flex-flow: row;
+    flex-flow: row wrap;
+    @include responsive-page(smd) {
+        padding: 0 em(16);
     }
-
     &__info {
+        display: block;
         border-left: solid $purple;
         padding-left: em(16);
         width: 100%;
+        min-width: em(160);
         max-width: em(255);
+        @include responsive-page(smd) {
+            margin-bottom: em(16);
+            width: em(160);
+        }
         
         h3 {
             //font-weight: 800;
