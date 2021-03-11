@@ -531,7 +531,8 @@ SCSS and BEM structure were used on this project
 .image__stats {
   position: absolute;
   filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
-  right: -7.375em;
+  border-radius: 8px;
+  right: -18.75em;
 }
 @media screen and (max-width: 768px) {
   .image__stats {
@@ -546,7 +547,7 @@ SCSS and BEM structure were used on this project
 @media screen and (min-width: 1024px) {
   .image__stats {
     width: 100%;
-    max-width: 37em;
+    max-width: 48em;
   }
 }
 @media screen and (max-width: 768px) {

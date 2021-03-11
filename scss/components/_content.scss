@@ -72,8 +72,9 @@
     
     &__stats {
         position:absolute;
-        filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));;
-        right: em(-118);
+        filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
+        border-radius: 8px;
+        right: em(-300);
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
@@ -82,7 +83,7 @@
         
         @include responsive-page(mdtop) { 
             width: 100%;
-            max-width: em(592);
+            max-width: em(768);
         }
     }
     @include responsive-page(smd) {
