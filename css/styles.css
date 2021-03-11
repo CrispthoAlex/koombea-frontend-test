@@ -1307,6 +1307,7 @@ SCSS and BEM structure were used on this project
 .single-content__link {
   display: flex;
   color: #8C30F5;
+  font-weight: bold;
 }
 .single-content__link .watch-video {
   position: relative;

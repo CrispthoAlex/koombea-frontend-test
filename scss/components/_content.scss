@@ -619,7 +619,8 @@
     &__link {
         display: flex;
         color: $purple;
-
+        font-weight: bold;
+        
         .watch-video {
             position: relative;
             left:60px;
