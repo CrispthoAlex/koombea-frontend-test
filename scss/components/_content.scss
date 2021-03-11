@@ -588,11 +588,11 @@
     }
     @include responsive-page(md) { 
         padding: em(44);
-        height: em(480);
+        height: em(420);
     }
     @include responsive-page(mdtop) { 
         padding: 64px;
-        height: em(540);
+        height: em(460);
         left: 60%;
         bottom: -15%;
     }
