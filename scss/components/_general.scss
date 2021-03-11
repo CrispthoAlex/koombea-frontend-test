@@ -1,35 +1,54 @@
 /* Stableshing Fonts */
+// first search locally
 @font-face {
-    font: {
-        family: $primaryfont;
-        weight: bold;
-        style: normal;
-        display: swap;
-    }
-    src: url('../fonts/Manrope-Bold.woff') format('woff'),
-    url('../fonts/Manrope-Bold.woff2') format('woff2');
+    font-family: $primaryfont;
+    src: local('Manrope ExtraBold'), local('Manrope-ExtraBold'),
+        url('../fonts/Manrope-ExtraBold.woff2') format('woff2'),
+        url('../fonts/Manrope-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Manrope';
+    src: local('Manrope SemiBold'), local('Manrope-SemiBold'),
+    url('../fonts/Manrope-SemiBold.woff2') format('woff2'),
+    url('../fonts/Manrope-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font: {
-        family: $primaryfont, $family;
-        weight: 500;
-        style: normal;
-        display: swap;
-    }
-    src: url('../fonts/Manrope-Medium.woff') format('woff'),
-    url('../fonts/Manrope-Medium.woff2') format('woff2');
+    font-family: $primaryfont;
+    src: local('Manrope Medium'), local('Manrope-Medium'),
+    url('../fonts/Manrope-Medium.woff2') format('woff2'),
+    url('../fonts/Manrope-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
-    font: {
-        family: $primaryfont, $family;
-        weight: normal;
-        style: normal;
-        display: swap;
-    }
-    src: url('../fonts/Manrope-Regular.woff') format('woff'),
-    url('../fonts/Manrope-Regular.woff2') format('woff2');
+    font-family: $primaryfont;
+    src: local('Manrope Bold'), local('Manrope-Bold'),
+        url('../fonts/Manrope-Bold.woff2') format('woff2'),
+        url('../fonts/Manrope-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: $primaryfont;
+    src: local('Manrope Regular'), local('Manrope-Regular'),
+        url('../fonts/Manrope-Regular.woff2') format('woff2'),
+        url('../fonts/Manrope-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* General CSS properties */
@@ -46,7 +65,7 @@ ul, li {
 }
 body {
     color: $gray900;
-    @include bigfont ($primaryfont, $family);
+    font-family: $primaryfont;
     display: flex;
     justify-content: center;
 }

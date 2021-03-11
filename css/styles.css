@@ -10,24 +10,38 @@
 /* Stableshing Fonts */
 @font-face {
   font-family: "Manrope";
-  font-weight: bold;
+  src: local("Manrope ExtraBold"), local("Manrope-ExtraBold"), url("../fonts/Manrope-ExtraBold.woff2") format("woff2"), url("../fonts/Manrope-ExtraBold.woff") format("woff");
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Manrope-Bold.woff") format("woff"), url("../fonts/Manrope-Bold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope";
+  src: local("Manrope SemiBold"), local("Manrope-SemiBold"), url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: local("Manrope Medium"), local("Manrope-Medium"), url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff") format("woff"), url("../fonts/Manrope-Medium.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope";
+  src: local("Manrope Bold"), local("Manrope-Bold"), url("../fonts/Manrope-Bold.woff2") format("woff2"), url("../fonts/Manrope-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Manrope";
+  src: local("Manrope Regular"), local("Manrope-Regular"), url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Manrope-Regular.woff") format("woff"), url("../fonts/Manrope-Regular.woff2") format("woff2");
 }
 /* General CSS properties */
 *, :after, :before {
@@ -45,7 +59,7 @@ ul, li {
 
 body {
   color: #18191F;
-  font-family: "Manrope", sans-serif;
+  font-family: "Manrope";
   display: flex;
   justify-content: center;
 }
@@ -1294,7 +1308,7 @@ SCSS and BEM structure were used on this project
 .single-content__link .watch-video::before {
   content: "";
   position: absolute;
-  top: 20 px;
+  top: 5px;
   margin-left: -18px;
   border-width: 8px;
   border-style: solid;
@@ -1407,6 +1421,114 @@ SCSS and BEM structure were used on this project
   position: absolute;
   top: 0;
   margin-left: -35px;
+}
+
+/* MAIN FOOTER */
+.main-footer {
+  background-color: #0B0D17;
+}
+
+/* Navigation footer */
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 5% 0;
+  width: 100%;
+  max-width: 75em;
+  flex-flow: column;
+  padding-bottom: 0;
+  width: 100%;
+  max-width: 90em;
+}
+
+.navigate-footer {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding-bottom: 1.875em;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 6%;
+}
+@media screen and (max-width: 768px) {
+  .navigate-footer {
+    flex-flow: wrap;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate-footer {
+    flex-flow: wrap;
+  }
+}
+.navigate-footer__list {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 26.25em;
+  min-width: 12.5em;
+}
+@media screen and (max-width: 768px) {
+  .navigate-footer__list {
+    width: 50%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate-footer__list {
+    width: 50%;
+  }
+}
+.navigate-footer__list .navigate-item {
+  color: #EEEFF4;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 0 0 1.5em;
+}
+.navigate-footer__list .navigate-item--title {
+  color: #F4F5F7;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/* Rights and Social */
+.secondary-footer {
+  position: relative;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5em;
+  padding-left: 6%;
+}
+
+.rights-text {
+  color: #F4F5F7;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.social-media {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 25em;
+}
+.social-media__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 2.0625em;
+  height: 2.0625em;
+  margin: 0 0.75em;
+  padding: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -5,12 +5,6 @@
     @return #{$pixels/$context}em;
 }
 
-@mixin bigfont ($fonts, $family) {
-    font: {
-        family: $fonts, $family;
-    }
-}
-
 /* Properties basic for sections */
 @mixin basic-section {
     position: relative;
