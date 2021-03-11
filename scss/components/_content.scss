@@ -78,7 +78,8 @@
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
-            transform: scale(.65);
+            left: em(-50);
+            transform: scale(0.35);
         }
         
         @include responsive-page(mdtop) { 
