@@ -529,9 +529,9 @@
 .stats {
     @include basic-section;
     flex-flow: row wrap;
-    @include responsive-page(smd) {
-        padding: 0 em(16);
-    }
+    @include responsive-page(smd) { padding: 0 em(16); }
+    @include responsive-page(md) { padding: em(16); }
+
     &__info {
         display: block;
         border-left: solid $purple;
@@ -545,7 +545,6 @@
         }
         
         h3 {
-            //font-weight: 800;
             font-size: 28px;
             line-height: 40px;
             margin: 0;
