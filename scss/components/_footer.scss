@@ -40,6 +40,9 @@
             font-size: 14px;
             line-height: 24px;
             margin: 0 0 em(24);
+
+            @include responsive-page(smd) { margin: 0 0 em(8);}
+
             &--title {
                 color: $gray100;
                 font-size: 18px;

@@ -531,7 +531,8 @@ SCSS and BEM structure were used on this project
 .image__stats {
   position: absolute;
   filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
-  right: -7.375em;
+  border-radius: 8px;
+  right: -18.75em;
 }
 @media screen and (max-width: 768px) {
   .image__stats {
@@ -540,13 +541,14 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .image__stats {
-    transform: scale(0.65);
+    left: -3.125em;
+    transform: scale(0.35);
   }
 }
 @media screen and (min-width: 1024px) {
   .image__stats {
     width: 100%;
-    max-width: 37em;
+    max-width: 48em;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1183,7 +1185,13 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (max-width: 768px) {
   .stats {
-    padding: 0 1em;
+    justify-content: center;
+    padding: 0.625em 1em;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .stats {
+    padding: 1em;
   }
 }
 .stats__info {
@@ -1254,13 +1262,13 @@ SCSS and BEM structure were used on this project
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .single-content {
     padding: 2.75em;
-    height: 30em;
+    height: 26.25em;
   }
 }
 @media screen and (min-width: 1024px) {
   .single-content {
     padding: 64px;
-    height: 33.75em;
+    height: 28.75em;
     left: 60%;
     bottom: -15%;
   }
@@ -1300,6 +1308,7 @@ SCSS and BEM structure were used on this project
 .single-content__link {
   display: flex;
   color: #8C30F5;
+  font-weight: bold;
 }
 .single-content__link .watch-video {
   position: relative;
@@ -1487,6 +1496,11 @@ SCSS and BEM structure were used on this project
   font-size: 14px;
   line-height: 24px;
   margin: 0 0 1.5em;
+}
+@media screen and (max-width: 768px) {
+  .navigate-footer__list .navigate-item {
+    margin: 0 0 0.5em;
+  }
 }
 .navigate-footer__list .navigate-item--title {
   color: #F4F5F7;

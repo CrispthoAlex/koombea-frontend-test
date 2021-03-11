@@ -72,17 +72,19 @@
     
     &__stats {
         position:absolute;
-        filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));;
-        right: em(-118);
+        filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
+        border-radius: 8px;
+        right: em(-300);
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
-            transform: scale(.65);
+            left: em(-50);
+            transform: scale(0.35);
         }
         
         @include responsive-page(mdtop) { 
             width: 100%;
-            max-width: em(592);
+            max-width: em(768);
         }
     }
     @include responsive-page(smd) {
@@ -528,8 +530,11 @@
     @include basic-section;
     flex-flow: row wrap;
     @include responsive-page(smd) {
-        padding: 0 em(16);
+        justify-content: center;
+        padding: em(10) em(16);
     }
+    @include responsive-page(md) { padding: em(16); }
+
     &__info {
         display: block;
         border-left: solid $purple;
@@ -543,7 +548,6 @@
         }
         
         h3 {
-            //font-weight: 800;
             font-size: 28px;
             line-height: 40px;
             margin: 0;
@@ -587,11 +591,11 @@
     }
     @include responsive-page(md) { 
         padding: em(44);
-        height: em(480);
+        height: em(420);
     }
     @include responsive-page(mdtop) { 
         padding: 64px;
-        height: em(540);
+        height: em(460);
         left: 60%;
         bottom: -15%;
     }
@@ -618,6 +622,7 @@
     &__link {
         display: flex;
         color: $purple;
+        font-weight: bold;
 
         .watch-video {
             position: relative;
