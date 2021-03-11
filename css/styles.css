@@ -1490,6 +1490,11 @@ SCSS and BEM structure were used on this project
   line-height: 24px;
   margin: 0 0 1.5em;
 }
+@media screen and (max-width: 768px) {
+  .navigate-footer__list .navigate-item {
+    margin: 0 0 0.5em;
+  }
+}
 .navigate-footer__list .navigate-item--title {
   color: #F4F5F7;
   font-size: 18px;
