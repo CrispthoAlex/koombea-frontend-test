@@ -529,7 +529,10 @@
 .stats {
     @include basic-section;
     flex-flow: row wrap;
-    @include responsive-page(smd) { padding: 0 em(16); }
+    @include responsive-page(smd) {
+        justify-content: center;
+        padding: em(10) em(16);
+    }
     @include responsive-page(md) { padding: em(16); }
 
     &__info {
@@ -620,7 +623,7 @@
         display: flex;
         color: $purple;
         font-weight: bold;
-        
+
         .watch-video {
             position: relative;
             left:60px;
