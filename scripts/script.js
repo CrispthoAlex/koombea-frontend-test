@@ -48,8 +48,19 @@ $(function () {
 
 /* EDITABLE MODE */
 
-// Contain all element to be editable by the user
-const editElements = [];
+// Get all element to be editable by the user
+const editElements = $('.js-editor');
 
-//editElements = $('.js-contentEdit').contentEditable = "true";
+/** 
+ * Setting ctrl + k (windows OS) and cmd + k (Mac OS) 
+ * From https://wangchujiang.com/hotkeys/ library
+*/
+hotkeys('ctrl+k, command+k', (event) => {
+  // 'ctrl+k or command+k'
+  editElements.each( (idx, editable) => {
+    editable.contentEditable="true";
+  });
+  event.preventDefault();
+})
+
 
