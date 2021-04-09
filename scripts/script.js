@@ -7,14 +7,14 @@ let dynamicMenu =  $('.js-navigate');
 let hoverLinks = document.querySelectorAll('.navigate-list__item--hover')
 
 
-$(document).ready(function () {
+$(function () {
   
   //Calculate the height of <header>
   //Use outerHeight() instead of height() if have padding
   let aboveHeight = $('header').outerHeight();
   
   // Fix the navbar/header when user scrolls the page
-  $(window).scroll(() => {
+  $(window).on('scroll', () => {
       //if scrolled down more than the header’s height
       if ($(window).scrollTop() > aboveHeight) {
         // if yes, add “fixed” class to the <nav>
@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 
   // Toggle class from Small and Medium device menu
-  $('.js-menu-button').click(function () {
+  $('.js-menu-button').on('click', function () {
       //hamburgerMenu.toggleClass('mobile-menu-hidden');
       dynamicMenu.toggleClass('navigate--opened');
       this.classList.toggle('menu-button--opened');
@@ -45,3 +45,11 @@ $(document).ready(function () {
     });
   });
 });
+
+/* EDITABLE MODE */
+
+// Contain all element to be editable by the user
+const editElements = [];
+
+//editElements = $('.js-contentEdit').contentEditable = "true";
+

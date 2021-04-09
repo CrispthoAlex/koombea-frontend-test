@@ -1,6 +1,9 @@
 //  Generals Functions or Methods
 
-// fonts function to convert px to em
+/*
+    Function to convert px to em
+    * Not apply to fonts
+*/
 @function em($pixels, $context: $browser-context) {
     @return #{$pixels/$context}em;
 }

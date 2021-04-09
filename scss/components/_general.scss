@@ -63,11 +63,10 @@ body, ul, li, .container {
 ul, li {
     list-style: none;
 }
-body {
+body { overflow-x: hidden; }
+body, html {
     color: $gray900;
     font-family: $primaryfont;
-    display: flex;
-    justify-content: center;
 }
 
 .container {
@@ -76,7 +75,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: em(1440);
-    overflow: hidden;
+    margin:0 auto;
 }
 .main-header, .main-content, .main-footer {
     display: flex;
@@ -87,8 +86,10 @@ body {
 }
 /* Don't show link behavior*/
 a:visited, a:link {
-    text-decoration: none;
     color:currentColor;
+}
+a:link {
+    text-decoration: none;
 }
 /* Don't show border when click */
 button {

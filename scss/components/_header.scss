@@ -197,7 +197,7 @@ SCSS and BEM structure were used on this project
         margin:0 .778em;
         border-radius: .444em;
         width: 5.556em;
-        height: 2.222em;
+        padding: .5em 0;
         font-weight: 700;
         @include responsive-page(smd) { margin:.3em .778em; height: 1.8em; }
         @include responsive-page(md) { margin:.3em .778em; height: 1.8em; }

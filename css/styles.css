@@ -5,6 +5,10 @@
 /** Mixin for media queries
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
+/*
+    Function to convert px to em
+    * Not apply to fonts
+*/
 /* Properties basic for sections */
 /* Clients Logo Clouds section */
 /* Stableshing Fonts */
@@ -58,10 +62,12 @@ ul, li {
 }
 
 body {
+  overflow-x: hidden;
+}
+
+body, html {
   color: #18191F;
   font-family: "Manrope";
-  display: flex;
-  justify-content: center;
 }
 
 .container {
@@ -70,7 +76,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 90em;
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .main-header, .main-content, .main-footer {
@@ -83,8 +89,11 @@ body {
 
 /* Don't show link behavior*/
 a:visited, a:link {
-  text-decoration: none;
   color: currentColor;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 /* Don't show border when click */
@@ -381,7 +390,7 @@ SCSS and BEM structure were used on this project
   margin: 0 0.778em;
   border-radius: 0.444em;
   width: 5.556em;
-  height: 2.222em;
+  padding: 0.5em 0;
   font-weight: 700;
 }
 @media screen and (max-width: 768px) {
@@ -524,15 +533,18 @@ SCSS and BEM structure were used on this project
 .image {
   position: absolute;
   display: flex;
-  width: 100%;
   align-items: center;
-  justify-content: center;
+  right: 0%;
+  width: 100%;
+  background-color: blue;
 }
 .image__stats {
   position: absolute;
   filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
   border-radius: 8px;
-  right: -18.75em;
+  right: -25%;
+  width: 100%;
+  max-width: 768px;
 }
 @media screen and (max-width: 768px) {
   .image__stats {
@@ -541,28 +553,15 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .image__stats {
-    left: -3.125em;
-    transform: scale(0.35);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .image__stats {
-    width: 100%;
-    max-width: 48em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .image {
-    position: absolute;
-    margin: 0;
-    width: 100%;
+    right: -35%;
+    transform: scale(0.75);
   }
 }
 
 .circle-background {
   position: relative;
   background: #D6B1FF;
-  border-radius: 100%;
+  border-radius: 50%;
   content: "";
   z-index: -1;
 }
@@ -1479,7 +1478,7 @@ SCSS and BEM structure were used on this project
   align-items: flex-start;
   width: 100%;
   max-width: 26.25em;
-  min-width: 12.5em;
+  min-width: 11.5em;
 }
 @media screen and (max-width: 768px) {
   .navigate-footer__list {
@@ -1506,6 +1505,9 @@ SCSS and BEM structure were used on this project
   color: #F4F5F7;
   font-size: 18px;
   line-height: 28px;
+}
+.navigate-footer__list .navigate-item-link {
+  color: #EEEFF4;
 }
 
 /* Rights and Social */

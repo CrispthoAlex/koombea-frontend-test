@@ -62,42 +62,35 @@
         }
     }
 }
-
 .image {
     position: absolute;
-    display:flex;
-    width: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    right: 0%;
+    width: 100%;
+    background-color: blue;
     
     &__stats {
         position:absolute;
         filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
         border-radius: 8px;
-        right: em(-300);
+        right: -25%;
+        width: 100%;
+        max-width: 768px;
+    
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
-            left: em(-50);
-            transform: scale(0.35);
+            right: -35%;
+            transform: scale(0.75);
         }
-        
-        @include responsive-page(mdtop) { 
-            width: 100%;
-            max-width: em(768);
-        }
-    }
-    @include responsive-page(smd) {
-        position: absolute;
-        margin:0;
-        width: 100%;
     }
 }
 
 .circle-background {
     position: relative;
     background: $purple800;
-    border-radius: 100%;
+    border-radius: 50%;
     content: "";
     z-index: -1;
     @include responsive-page(smd) {

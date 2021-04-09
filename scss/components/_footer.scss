@@ -31,7 +31,7 @@
         align-items:flex-start;
         width: 100%;
         max-width: em(420);
-        min-width: em(200);
+        min-width: em(184);
 
         @include responsive-page(smd) { width: 50%; }
         @include responsive-page(md) { width: 50%; }
@@ -47,7 +47,8 @@
                 color: $gray100;
                 font-size: 18px;
                 line-height: 28px;
-            }       
+            }
+            &-link { color: $gray200; }
         }
 
     }
