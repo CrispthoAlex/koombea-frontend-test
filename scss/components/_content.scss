@@ -1,5 +1,61 @@
 /* MAIN CONTENT */
 
+/* Editable mode */
+.js-editor { caret-color: rgb(255, 0, 0); }
+.saveEditor {
+    position: fixed;
+    //display: none;
+    top:80px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    left: 5%;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgb(106, 106, 106);
+    background-color: #ffd900e9;
+    border:2px solid rgb(186, 0, 196);
+    border-radius: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 5px;
+    width: 120px;
+    z-index: 5;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 99%;
+        height: 32px;
+        background-color: white;
+        border-radius: 30%;
+        z-index: -1;
+        top: 10px;
+    }
+    & > * { font-weight: 900; }
+    &__title {
+        color: #000000;
+        font-size: 22px;
+        text-transform: uppercase;
+        margin: 0 auto 10px;
+        padding: 5px 0;
+    }
+    &__Ok {
+        cursor: pointer;
+        color:rgb(110, 0, 153);
+        background-color: #ffffff;
+        border-radius: 25% 50%;
+        filter: drop-shadow(1px 1px 2px);
+        //border: 2px solid #ff7215e0;
+        width: 80%;
+        padding: 5px 0;
+        margin: 0 auto 10px;
+        &:hover {
+            filter: drop-shadow(2px 2px 4px);
+            border-inline: 3px solid #ff7215e0;
+        }
+    }
+}
+
+
 // Overview/Hero section - Presentation
 .overview {
     @include basic-section ;
