@@ -8,7 +8,7 @@
     top:70px;
     flex-flow: column;
     align-items: center;
-    left: 5%;
+    left: 2%;
     text-align: center;
     box-shadow: 2px 2px 5px rgb(106, 106, 106);
     background-color: #ffd900e9;
@@ -97,6 +97,7 @@
             margin:0;
         }
         @include responsive-page(smd) {
+            width: 100%;
             font-size:em(24);
         }
     }
@@ -113,13 +114,12 @@
         max-width: 10.556em;
         min-width: 3.667em;
         width:100%;
-        height: 3.444em;
-        max-height: 10.889em;
+        padding: 1em 0;
         min-height: 1.556em;
         background-color: $purple;
         border-radius: 0.444em;
-        color: #ffffff;
         a {
+            color: #ffffff;
             font: {
                 weight: bold;
                 size:1.4rem;
@@ -459,8 +459,6 @@
     padding: 0;
     background-color: $turquoise100;
     @include responsive-page(smd) { flex-flow: column; }
-    @include responsive-page(md) { height: 580px; }
-    @include responsive-page(mdtop) { height: 628px; }
 }
 
 .left-container {
@@ -470,8 +468,9 @@
     justify-content: center;
     background-color: $turquoise;
     width: 50%;
-    height: 100%;
+    padding:17% 0;
     @include responsive-page(smd) { 
+        padding:5% 0;
         width: 100%; 
     }
 }
@@ -517,7 +516,7 @@
     background-color: #ffffff;
     padding: em(40);
     box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
-    margin: 32px 0;
+    margin: 5% 0;
     max-width: em(574);
     @include responsive-page(smd) { padding: em(20); margin: 0; }
 
@@ -626,16 +625,12 @@
     @include basic-section ;
 
     max-width: em(1440);
-    max-height: em(760);
     padding: 0;
     background: no-repeat url(../image/single-cover-opt.png);
     
     @include responsive-page(smd) {
         justify-content: center;
         height: em(380);
-    }
-    @include responsive-page(mdtop) {
-        height: em(760);
     }
 }
 
@@ -644,22 +639,13 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    width: em(460);
+    width: em(540);
     background-color: #ffffff;
-    
-    @include responsive-page(smd) {
-        padding: em(16);
-        height: em(300);
-    }
-    @include responsive-page(md) { 
-        padding: em(44);
-        height: em(420);
-    }
+    padding:5%;
+
     @include responsive-page(mdtop) { 
-        padding: 64px;
-        height: em(460);
-        left: 60%;
-        bottom: -15%;
+        left: 51%;
+        margin-top: 20%;
     }
 
     &__title {
@@ -683,9 +669,9 @@
     }
     &__link {
         display: flex;
-        color: $purple;
         font-weight: bold;
-
+        
+        & > a {color: $purple;}
         .watch-video {
             position: relative;
             left:60px;
@@ -710,9 +696,6 @@
     flex-flow: column;
     background-color: $purple;
     max-width: em(1440);
-    max-height: em(540);
-    @include responsive-page(smd) { height: em(460);}
-    @include responsive-page(mdtop) { height: em(540); }
 }
 
 .info-page {
@@ -747,9 +730,9 @@
     }
     &__button {
         &--cta-section {
-            color: $purple;
             background-color: #ffffff;
             max-width:em(240);
+            a { color: $purple;}
         }
     }
 }

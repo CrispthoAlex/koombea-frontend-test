@@ -85,10 +85,10 @@ body, html {
     width:100%;
 }
 /* Don't show link behavior*/
-a:visited, a:link {
+a:visited {
     color:currentColor;
 }
-a:link {
+a:link, a:link {
     text-decoration: none;
 }
 /* Don't show border when click */
