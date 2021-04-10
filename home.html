@@ -52,7 +52,8 @@
     <main class="main-content" aria-label="Main Content">
         <div class="saveEditor js-saveEditor" aria-label="Text Editor" title="Editable mode">
             <h4 class="saveEditor__title">options</h4>
-            <p href="" class="saveEditor__Ok">Save text</p>
+            <p href="" class="saveEditor__Ok js-saveEditor__Ok">Save text</p>
+            <p class="saveEditor__close js-saveEditor__close" title="Close">X</p>
         </div>
         <div class="container">
             <!-- Presentation content -->
@@ -68,7 +69,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc odio in et, lectus sit lorem id integer.
                         </p>
                     </div>
-                    <div class="info-page__button" aria-label="Get started link"><a href="#">Get Started</a></div>
+                    <div class="info-page__button" aria-label="Get started link"><a class="js-editor" contenteditable="false" href="#">Get Started</a></div>
                 </div>
                 <div class="image">
                     <img class="image__stats" src="./image/stats-full-opt.png" alt="Preview Stats" aria-label="Preview image">

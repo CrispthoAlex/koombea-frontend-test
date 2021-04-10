@@ -6,6 +6,26 @@ let dynamicMenu =  $('.js-navigate');
 // Get elements to modified active link
 let hoverLinks = document.querySelectorAll('.navigate-list__item--hover')
 
+/** 
+ * Mange LocalStorage for Editable Mode
+ * Variables and Arrays to load the new content (edited elements)
+ */
+// Get all element to be editable by the user
+const editElements = $('.js-editor');
+// Save the current HTML elements edited
+let sessionEdited = [];
+// Get the element in the local storage
+let readEditable = localStorage.getItem('neweditedElements');
+readEditable = JSON.parse(readEditable) ;
+
+// Load content edited if it was saved before
+if(readEditable) {
+  let i = 0;
+  Array.from(editElements).forEach( function (test) {
+    test.innerHTML = readEditable[i] ;
+    i++;
+  } );
+}
 
 $(function () {
   
@@ -46,21 +66,37 @@ $(function () {
   });
 });
 
-/* EDITABLE MODE */
 
-// Get all element to be editable by the user
-const editElements = $('.js-editor');
+/* EDITABLE MODE */
 
 /** 
  * Setting ctrl + k (windows OS) and cmd + k (Mac OS) 
  * From https://wangchujiang.com/hotkeys/ library
 */
 hotkeys('ctrl+k, command+k', (event) => {
+  // Show the Options box
+  $('.saveEditor')[0].style.display='flex';
   // 'ctrl+k or command+k'
   editElements.each( (idx, editable) => {
     editable.contentEditable="true";
   });
   event.preventDefault();
-})
+});
 
+// Save each editable element in a array. Don't lose the edition
+$('.js-saveEditor__Ok').on('click', () => {
+  
+  // Save the editable elements in an array to localstorage
+  Array.from(editElements).forEach( function (test) {
+    sessionEdited.push(test.textContent) ;
+  } );
+  // Save in the localstorage
+  sessionEdited.forEach( function () {
+    localStorage.setItem('neweditedElements', JSON.stringify(sessionEdited));
+  });
+
+});
+
+// Close app
+$('.js-saveEditor__close').on('click', () => { $('.saveEditor')[0].style.display='none'; });
 
