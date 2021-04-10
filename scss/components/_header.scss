@@ -33,11 +33,12 @@ SCSS and BEM structure were used on this project
 
 .navbar {
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: em(1200);
-    position: relative;
+    padding:9px 0;
     @include responsive-page(smd) {flex-flow:row wrap; }
     @include responsive-page(md) { flex-flow:row wrap; }
 }
@@ -187,6 +188,7 @@ SCSS and BEM structure were used on this project
         background-color: $gray100;
         width: 30%;
         max-width:em(150);
+        min-width: em(115);
     }
     @include responsive-page(smd) { @include logo-responsive () }
     @include responsive-page(md) { @include logo-responsive () }
@@ -198,6 +200,8 @@ SCSS and BEM structure were used on this project
     justify-content: center;
     font-size:.778em;
     font-weight: 700;
+    @include responsive-page(smd) { flex-flow: column; width: 33%; }
+    @include responsive-page(md) { width: 33%; }
     &__login, &__sign-up {
         display: flex;
         align-items: center;
@@ -221,6 +225,4 @@ SCSS and BEM structure were used on this project
         @include responsive-page(smd) { color:$purple; background-color: #ffffff; }
         @include responsive-page(md) { color:$purple; background-color: #ffffff; }
     }
-    @include responsive-page(smd) { width: 33%; }
-    @include responsive-page(md) { width: 33%; }
 }

@@ -147,11 +147,12 @@ SCSS and BEM structure were used on this project
 
 .navbar {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 75em;
-  position: relative;
+  padding: 9px 0;
 }
 @media screen and (max-width: 768px) {
   .navbar {
@@ -364,6 +365,7 @@ SCSS and BEM structure were used on this project
     background-color: #F4F5F7;
     width: 30%;
     max-width: 9.375em;
+    min-width: 7.1875em;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
@@ -375,6 +377,7 @@ SCSS and BEM structure were used on this project
     background-color: #F4F5F7;
     width: 30%;
     max-width: 9.375em;
+    min-width: 7.1875em;
   }
 }
 
@@ -385,6 +388,17 @@ SCSS and BEM structure were used on this project
   justify-content: center;
   font-size: 0.778em;
   font-weight: 700;
+}
+@media screen and (max-width: 768px) {
+  .account-buttons {
+    flex-flow: column;
+    width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .account-buttons {
+    width: 33%;
+  }
 }
 .account-buttons__login, .account-buttons__sign-up {
   display: flex;
@@ -425,16 +439,6 @@ SCSS and BEM structure were used on this project
   .account-buttons__sign-up {
     color: #8C30F5;
     background-color: #ffffff;
-  }
-}
-@media screen and (max-width: 768px) {
-  .account-buttons {
-    width: 33%;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .account-buttons {
-    width: 33%;
   }
 }
 
@@ -1097,7 +1101,7 @@ SCSS and BEM structure were used on this project
   justify-content: center;
   background-color: #2EC5CE;
   width: 50%;
-  padding: 17% 0;
+  padding: 16% 0;
 }
 @media screen and (max-width: 768px) {
   .left-container {
