@@ -31,7 +31,7 @@
         align-items:flex-start;
         width: 100%;
         max-width: em(420);
-        min-width: em(200);
+        min-width: em(184);
 
         @include responsive-page(smd) { width: 50%; }
         @include responsive-page(md) { width: 50%; }
@@ -47,7 +47,8 @@
                 color: $gray100;
                 font-size: 18px;
                 line-height: 28px;
-            }       
+            }
+            &-link { color: $gray200; }
         }
 
     }
@@ -60,14 +61,15 @@
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: em(80);
-    padding-left: 6%;
+    width: 88%;
+    margin: 0 auto;
 }
 .rights-text {
     color: $gray100;
     font-size: 14px;
     line-height: 24px;
+    width: 100%;
+    max-width: 540px;
 }
 .social-media {
     display: flex;

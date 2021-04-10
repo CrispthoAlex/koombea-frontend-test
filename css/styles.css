@@ -5,6 +5,10 @@
 /** Mixin for media queries
     Size applied from https://getbootstrap.com/docs/4.1/layout/grid/
 */
+/*
+    Function to convert px to em
+    * Not apply to fonts
+*/
 /* Properties basic for sections */
 /* Clients Logo Clouds section */
 /* Stableshing Fonts */
@@ -48,7 +52,7 @@
   box-sizing: border-box;
 }
 
-body, ul, li, .container {
+body, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -58,10 +62,12 @@ ul, li {
 }
 
 body {
+  overflow-x: hidden;
+}
+
+body, html {
   color: #18191F;
   font-family: "Manrope";
-  display: flex;
-  justify-content: center;
 }
 
 .container {
@@ -70,7 +76,7 @@ body {
   align-items: center;
   width: 100%;
   max-width: 90em;
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .main-header, .main-content, .main-footer {
@@ -82,9 +88,12 @@ body {
 }
 
 /* Don't show link behavior*/
-a:visited, a:link {
-  text-decoration: none;
+a:visited {
   color: currentColor;
+}
+
+a:link, a:link {
+  text-decoration: none;
 }
 
 /* Don't show border when click */
@@ -102,7 +111,6 @@ SCSS and BEM structure were used on this project
   margin: 0;
   width: 100%;
   position: relative;
-  height: 4.5em;
   box-shadow: 0px 1px 0px #E5E9F2;
 }
 @media screen and (max-width: 768px) {
@@ -139,11 +147,12 @@ SCSS and BEM structure were used on this project
 
 .navbar {
   display: flex;
+  position: relative;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 75em;
-  position: relative;
+  padding: 9px 0;
 }
 @media screen and (max-width: 768px) {
   .navbar {
@@ -242,35 +251,39 @@ SCSS and BEM structure were used on this project
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
 }
 .navigate .navigate-list__item {
+  text-align: center;
   font-weight: bold;
-  font-size: 0.778em;
+  font-size: 1em;
   line-height: 1.111em;
-  margin: 0 0.625em;
+  margin: 1.5625em 0;
+  width: 78px;
 }
 @media screen and (max-width: 768px) {
-  .navigate .navigate-list__item {
-    margin: 1.5625em 0;
-    font-size: 1em;
+  .navigate .navigate-list__item a {
+    color: #ffffff;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
+  .navigate .navigate-list__item a {
+    color: #ffffff;
+  }
+}
+@media screen and (min-width: 1024px) {
   .navigate .navigate-list__item {
-    margin: 1.5625em 0;
-    font-size: 1em;
+    margin: 0 0.625em;
+    font-size: 0.778em;
+    width: 60px;
+  }
+  .navigate .navigate-list__item a {
+    color: currentColor;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) {
   .navigate .navigate-list {
-    flex-flow: column;
-    height: 16em;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .navigate .navigate-list {
-    flex-flow: column;
-    height: 16em;
+    flex-flow: row;
   }
 }
 @media screen and (max-width: 768px) {
@@ -347,22 +360,24 @@ SCSS and BEM structure were used on this project
   .logo-header {
     align-self: center;
     padding: 0.5em 1em;
-    border: 0.25em solid #D6B1FF;
+    border: 0.15em solid #D6B1FF;
     border-radius: 1.5em;
     background-color: #F4F5F7;
-    width: 33%;
+    width: 30%;
     max-width: 9.375em;
+    min-width: 7.1875em;
   }
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .logo-header {
     align-self: center;
     padding: 0.5em 1em;
-    border: 0.25em solid #D6B1FF;
+    border: 0.15em solid #D6B1FF;
     border-radius: 1.5em;
     background-color: #F4F5F7;
-    width: 33%;
+    width: 30%;
     max-width: 9.375em;
+    min-width: 7.1875em;
   }
 }
 
@@ -374,27 +389,27 @@ SCSS and BEM structure were used on this project
   font-size: 0.778em;
   font-weight: 700;
 }
+@media screen and (max-width: 768px) {
+  .account-buttons {
+    flex-flow: column;
+    width: 33%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+  .account-buttons {
+    width: 33%;
+  }
+}
 .account-buttons__login, .account-buttons__sign-up {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0.778em;
+  margin: 0.3em 0.778em;
   border-radius: 0.444em;
   width: 5.556em;
-  height: 2.222em;
+  max-width: 5.556em;
+  padding: 0.5em 0;
   font-weight: 700;
-}
-@media screen and (max-width: 768px) {
-  .account-buttons__login, .account-buttons__sign-up {
-    margin: 0.3em 0.778em;
-    height: 1.8em;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .account-buttons__login, .account-buttons__sign-up {
-    margin: 0.3em 0.778em;
-    height: 1.8em;
-  }
 }
 .account-buttons__login {
   color: #8C30F5;
@@ -426,20 +441,83 @@ SCSS and BEM structure were used on this project
     background-color: #ffffff;
   }
 }
-@media screen and (max-width: 768px) {
-  .account-buttons {
-    flex-flow: column;
-    width: 33%;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .account-buttons {
-    flex-flow: column;
-    width: 33%;
-  }
-}
 
 /* MAIN CONTENT */
+/* Editable mode */
+.js-editor {
+  caret-color: red;
+}
+
+.saveEditor {
+  position: fixed;
+  display: none;
+  top: 70px;
+  flex-flow: column;
+  align-items: center;
+  left: 2%;
+  text-align: center;
+  box-shadow: 2px 2px 5px #6a6a6a;
+  background-color: #ffd900e9;
+  border: 2px solid #ba00c4;
+  border-radius: 25px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0 5px;
+  width: 120px;
+  transition: all 0.2s;
+  z-index: 5;
+}
+.saveEditor::before {
+  position: absolute;
+  content: "";
+  width: 99%;
+  height: 32px;
+  background-color: white;
+  border-radius: 30%;
+  z-index: -1;
+  top: 5px;
+}
+.saveEditor > * {
+  font-weight: 900;
+}
+.saveEditor__close {
+  position: absolute;
+  align-self: flex-end;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 25%;
+  background-color: #0401b5;
+  width: 10px;
+  bottom: 1px;
+  min-width: max-content;
+  margin: 0;
+}
+.saveEditor__title {
+  color: #000000;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0 auto 10px;
+  padding: 5px 0;
+}
+.saveEditor__Ok {
+  cursor: pointer;
+  color: #6e0099;
+  background-color: #ffffff;
+  border-radius: 25% 50%;
+  filter: drop-shadow(1px 1px 2px);
+  width: 80%;
+  padding: 5px 0;
+  margin: 0 auto 15px;
+  transition: all 0.1s;
+}
+.saveEditor__Ok:hover {
+  filter: drop-shadow(2px 2px 4px);
+  border-inline: 3px solid #ff7215e0;
+}
+
 .overview {
   position: relative;
   display: flex;
@@ -489,6 +567,7 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (max-width: 768px) {
   .info-page__title {
+    width: 100%;
     font-size: 1.5em;
   }
 }
@@ -504,14 +583,13 @@ SCSS and BEM structure were used on this project
   max-width: 10.556em;
   min-width: 3.667em;
   width: 100%;
-  height: 3.444em;
-  max-height: 10.889em;
+  padding: 1em 0;
   min-height: 1.556em;
   background-color: #8C30F5;
   border-radius: 0.444em;
-  color: #ffffff;
 }
 .info-page__button a {
+  color: #ffffff;
   font-weight: bold;
   font-size: 1.4rem;
 }
@@ -524,15 +602,18 @@ SCSS and BEM structure were used on this project
 .image {
   position: absolute;
   display: flex;
-  width: 100%;
   align-items: center;
-  justify-content: center;
+  right: 0%;
+  width: 100%;
+  background-color: blue;
 }
 .image__stats {
   position: absolute;
   filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
   border-radius: 8px;
-  right: -18.75em;
+  right: -25%;
+  width: 100%;
+  max-width: 768px;
 }
 @media screen and (max-width: 768px) {
   .image__stats {
@@ -541,28 +622,15 @@ SCSS and BEM structure were used on this project
 }
 @media screen and (min-width: 769px) and (max-width: 1023px) {
   .image__stats {
-    left: -3.125em;
-    transform: scale(0.35);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .image__stats {
-    width: 100%;
-    max-width: 48em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .image {
-    position: absolute;
-    margin: 0;
-    width: 100%;
+    right: -35%;
+    transform: scale(0.75);
   }
 }
 
 .circle-background {
   position: relative;
   background: #D6B1FF;
-  border-radius: 100%;
+  border-radius: 50%;
   content: "";
   z-index: -1;
 }
@@ -1025,16 +1093,6 @@ SCSS and BEM structure were used on this project
     flex-flow: column;
   }
 }
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .testimonial {
-    height: 580px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .testimonial {
-    height: 628px;
-  }
-}
 
 .left-container {
   position: relative;
@@ -1043,10 +1101,11 @@ SCSS and BEM structure were used on this project
   justify-content: center;
   background-color: #2EC5CE;
   width: 50%;
-  height: 100%;
+  padding: 16% 0;
 }
 @media screen and (max-width: 768px) {
   .left-container {
+    padding: 5% 0;
     width: 100%;
   }
 }
@@ -1092,7 +1151,7 @@ SCSS and BEM structure were used on this project
   background-color: #ffffff;
   padding: 2.5em;
   box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
-  margin: 32px 0;
+  margin: 5% 0;
   max-width: 35.875em;
 }
 @media screen and (max-width: 768px) {
@@ -1229,7 +1288,6 @@ SCSS and BEM structure were used on this project
   width: 100%;
   max-width: 75em;
   max-width: 90em;
-  max-height: 47.5em;
   padding: 0;
   background: no-repeat url(../image/single-cover-opt.png);
 }
@@ -1239,38 +1297,20 @@ SCSS and BEM structure were used on this project
     height: 23.75em;
   }
 }
-@media screen and (min-width: 1024px) {
-  .single {
-    height: 47.5em;
-  }
-}
 
 .single-content {
   position: relative;
   display: flex;
   flex-flow: column;
   justify-content: center;
-  width: 28.75em;
+  width: 33.75em;
   background-color: #ffffff;
-}
-@media screen and (max-width: 768px) {
-  .single-content {
-    padding: 1em;
-    height: 18.75em;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .single-content {
-    padding: 2.75em;
-    height: 26.25em;
-  }
+  padding: 5%;
 }
 @media screen and (min-width: 1024px) {
   .single-content {
-    padding: 64px;
-    height: 28.75em;
-    left: 60%;
-    bottom: -15%;
+    left: 51%;
+    margin-top: 20%;
   }
 }
 .single-content__title {
@@ -1307,8 +1347,10 @@ SCSS and BEM structure were used on this project
 }
 .single-content__link {
   display: flex;
-  color: #8C30F5;
   font-weight: bold;
+}
+.single-content__link > a {
+  color: #8C30F5;
 }
 .single-content__link .watch-video {
   position: relative;
@@ -1337,17 +1379,6 @@ SCSS and BEM structure were used on this project
   flex-flow: column;
   background-color: #8C30F5;
   max-width: 90em;
-  max-height: 33.75em;
-}
-@media screen and (max-width: 768px) {
-  .cta-section {
-    height: 28.75em;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .cta-section {
-    height: 33.75em;
-  }
 }
 
 .info-page--cta-section {
@@ -1383,9 +1414,11 @@ SCSS and BEM structure were used on this project
   }
 }
 .info-page__button--cta-section {
-  color: #8C30F5;
   background-color: #ffffff;
   max-width: 15em;
+}
+.info-page__button--cta-section a {
+  color: #8C30F5;
 }
 
 .hightlights {
@@ -1479,7 +1512,7 @@ SCSS and BEM structure were used on this project
   align-items: flex-start;
   width: 100%;
   max-width: 26.25em;
-  min-width: 12.5em;
+  min-width: 11.5em;
 }
 @media screen and (max-width: 768px) {
   .navigate-footer__list {
@@ -1507,6 +1540,9 @@ SCSS and BEM structure were used on this project
   font-size: 18px;
   line-height: 28px;
 }
+.navigate-footer__list .navigate-item-link {
+  color: #EEEFF4;
+}
 
 /* Rights and Social */
 .secondary-footer {
@@ -1515,15 +1551,16 @@ SCSS and BEM structure were used on this project
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 5em;
-  padding-left: 6%;
+  width: 88%;
+  margin: 0 auto;
 }
 
 .rights-text {
   color: #F4F5F7;
   font-size: 14px;
   line-height: 24px;
+  width: 100%;
+  max-width: 540px;
 }
 
 .social-media {

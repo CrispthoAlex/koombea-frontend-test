@@ -1,6 +1,75 @@
 /* MAIN CONTENT */
 
-// ==== Make mixin for general properties =====//
+/* Editable mode */
+.js-editor { caret-color: rgb(255, 0, 0); }
+.saveEditor {
+    position: fixed;
+    display: none;
+    top:70px;
+    flex-flow: column;
+    align-items: center;
+    left: 2%;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgb(106, 106, 106);
+    background-color: #ffd900e9;
+    border:2px solid rgb(186, 0, 196);
+    border-radius: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 5px;
+    width: 120px;
+    transition: all .2s;
+    z-index: 5;
+    &::before {
+        position: absolute;
+        content: "";
+        width: 99%;
+        height: 32px;
+        background-color: white;
+        border-radius: 30%;
+        z-index: -1;
+        top: 5px;
+    }
+    & > * { font-weight: 900; }
+    &__close {
+        position:absolute;
+        align-self:flex-end;
+        text-align: center;
+        font-size: 12px;
+        color: #ffffff;
+        font-weight: 900;
+        cursor: pointer;
+        border-radius: 25%;
+        background-color: rgb(4, 1, 181);
+        width: 10px;
+        bottom:1px;
+        min-width: max-content;
+        margin:0;
+    }
+    
+    &__title {
+        color: #000000;
+        font-size: 22px;
+        text-transform: uppercase;
+        margin: 0 auto 10px;
+        padding: 5px 0;
+    }
+    &__Ok {
+        cursor: pointer;
+        color:rgb(110, 0, 153);
+        background-color: #ffffff;
+        border-radius: 25% 50%;
+        filter: drop-shadow(1px 1px 2px);
+        width: 80%;
+        padding: 5px 0;
+        margin: 0 auto 15px;
+        transition: all .1s;
+        &:hover {
+            filter: drop-shadow(2px 2px 4px);
+            border-inline: 3px solid #ff7215e0;
+        }
+    }
+}
 
 // Overview/Hero section - Presentation
 .overview {
@@ -28,6 +97,7 @@
             margin:0;
         }
         @include responsive-page(smd) {
+            width: 100%;
             font-size:em(24);
         }
     }
@@ -44,13 +114,12 @@
         max-width: 10.556em;
         min-width: 3.667em;
         width:100%;
-        height: 3.444em;
-        max-height: 10.889em;
+        padding: 1em 0;
         min-height: 1.556em;
         background-color: $purple;
         border-radius: 0.444em;
-        color: #ffffff;
         a {
+            color: #ffffff;
             font: {
                 weight: bold;
                 size:1.4rem;
@@ -62,42 +131,35 @@
         }
     }
 }
-
 .image {
     position: absolute;
-    display:flex;
-    width: 100%;
+    display: flex;
     align-items: center;
-    justify-content: center;
+    right: 0%;
+    width: 100%;
+    background-color: blue;
     
     &__stats {
         position:absolute;
         filter: drop-shadow(0px 10px 20px rgba(41, 41, 42, 0.07));
         border-radius: 8px;
-        right: em(-300);
+        right: -25%;
+        width: 100%;
+        max-width: 768px;
+    
         @include responsive-page(smd) { display: none; }
         
         @include responsive-page(md) { 
-            left: em(-50);
-            transform: scale(0.35);
+            right: -35%;
+            transform: scale(0.75);
         }
-        
-        @include responsive-page(mdtop) { 
-            width: 100%;
-            max-width: em(768);
-        }
-    }
-    @include responsive-page(smd) {
-        position: absolute;
-        margin:0;
-        width: 100%;
     }
 }
 
 .circle-background {
     position: relative;
     background: $purple800;
-    border-radius: 100%;
+    border-radius: 50%;
     content: "";
     z-index: -1;
     @include responsive-page(smd) {
@@ -397,8 +459,6 @@
     padding: 0;
     background-color: $turquoise100;
     @include responsive-page(smd) { flex-flow: column; }
-    @include responsive-page(md) { height: 580px; }
-    @include responsive-page(mdtop) { height: 628px; }
 }
 
 .left-container {
@@ -408,8 +468,9 @@
     justify-content: center;
     background-color: $turquoise;
     width: 50%;
-    height: 100%;
+    padding:16% 0;
     @include responsive-page(smd) { 
+        padding:5% 0;
         width: 100%; 
     }
 }
@@ -455,7 +516,7 @@
     background-color: #ffffff;
     padding: em(40);
     box-shadow: 0px 30px 40px rgba(212, 217, 232, 0.2);
-    margin: 32px 0;
+    margin: 5% 0;
     max-width: em(574);
     @include responsive-page(smd) { padding: em(20); margin: 0; }
 
@@ -564,16 +625,12 @@
     @include basic-section ;
 
     max-width: em(1440);
-    max-height: em(760);
     padding: 0;
     background: no-repeat url(../image/single-cover-opt.png);
     
     @include responsive-page(smd) {
         justify-content: center;
         height: em(380);
-    }
-    @include responsive-page(mdtop) {
-        height: em(760);
     }
 }
 
@@ -582,22 +639,13 @@
     display: flex;
     flex-flow: column;
     justify-content: center;
-    width: em(460);
+    width: em(540);
     background-color: #ffffff;
-    
-    @include responsive-page(smd) {
-        padding: em(16);
-        height: em(300);
-    }
-    @include responsive-page(md) { 
-        padding: em(44);
-        height: em(420);
-    }
+    padding:5%;
+
     @include responsive-page(mdtop) { 
-        padding: 64px;
-        height: em(460);
-        left: 60%;
-        bottom: -15%;
+        left: 51%;
+        margin-top: 20%;
     }
 
     &__title {
@@ -621,9 +669,9 @@
     }
     &__link {
         display: flex;
-        color: $purple;
         font-weight: bold;
-
+        
+        & > a {color: $purple;}
         .watch-video {
             position: relative;
             left:60px;
@@ -648,9 +696,6 @@
     flex-flow: column;
     background-color: $purple;
     max-width: em(1440);
-    max-height: em(540);
-    @include responsive-page(smd) { height: em(460);}
-    @include responsive-page(mdtop) { height: em(540); }
 }
 
 .info-page {
@@ -685,9 +730,9 @@
     }
     &__button {
         &--cta-section {
-            color: $purple;
             background-color: #ffffff;
             max-width:em(240);
+            a { color: $purple;}
         }
     }
 }
