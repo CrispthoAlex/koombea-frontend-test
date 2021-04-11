@@ -42,6 +42,9 @@ This project consists of creating a landing page in HTML, CSS and Javascript bas
         
         Adding main banner. Once the feature is finished -> `create pull request` -> ``wait for feedback`` -> ``fix feedback`` -> ``close history`` -> ``start new task``
 
+#### **Deployment**
+
+https://koombea-frontend-test.herokuapp.com/
 
 #### **Follow me** 💬
 
