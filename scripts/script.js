@@ -98,5 +98,9 @@ $('.js-saveEditor__Ok').on('click', () => {
 });
 
 // Close app
-$('.js-saveEditor__close').on('click', () => { $('.saveEditor')[0].style.display='none'; });
+$('.js-saveEditor__close').on('click', () => {
+  $('.saveEditor')[0].style.display='none';
+  location.reload();
+  console.log($('window'));
+});
 
