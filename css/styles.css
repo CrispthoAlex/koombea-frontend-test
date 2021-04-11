@@ -261,15 +261,8 @@ SCSS and BEM structure were used on this project
   margin: 1.5625em 0;
   width: 78px;
 }
-@media screen and (max-width: 768px) {
-  .navigate .navigate-list__item a {
-    color: #ffffff;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .navigate .navigate-list__item a {
-    color: #ffffff;
-  }
+.navigate .navigate-list__item a {
+  color: #ffffff;
 }
 @media screen and (min-width: 1024px) {
   .navigate .navigate-list__item {
@@ -297,8 +290,9 @@ SCSS and BEM structure were used on this project
   .navigate--opened {
     flex-flow: row wrap;
     justify-content: center;
-    top: 4.4em;
+    top: 4.6875em;
     width: 100%;
+    padding: 60px 0;
     background-color: #8C30F5;
     transition: 0.7s;
     transform: scale(1);
@@ -317,8 +311,9 @@ SCSS and BEM structure were used on this project
   .navigate--opened {
     flex-flow: row wrap;
     justify-content: center;
-    top: 4.4em;
+    top: 4.6875em;
     width: 100%;
+    padding: 60px 0;
     background-color: #8C30F5;
     transition: 0.7s;
     transform: scale(1);
@@ -335,7 +330,7 @@ SCSS and BEM structure were used on this project
 .active {
   border: 0.2em solid #969BAB;
   border-radius: 0.5em;
-  padding: 5% 2%;
+  padding: 8px 2px;
   background-color: #A0DCFF;
   transition: 0.6s;
   width: 110%;
@@ -387,17 +382,14 @@ SCSS and BEM structure were used on this project
   align-items: center;
   justify-content: center;
   font-size: 0.778em;
-  font-weight: 700;
+  width: 33%;
 }
-@media screen and (max-width: 768px) {
-  .account-buttons {
-    flex-flow: column;
-    width: 33%;
-  }
+.account-buttons a {
+  color: #ffffff;
 }
-@media screen and (min-width: 769px) and (max-width: 1023px) {
+@media screen and (min-width: 1024px) {
   .account-buttons {
-    width: 33%;
+    width: fit-content;
   }
 }
 .account-buttons__login, .account-buttons__sign-up {
@@ -409,36 +401,25 @@ SCSS and BEM structure were used on this project
   width: 5.556em;
   max-width: 5.556em;
   padding: 0.5em 0;
-  font-weight: 700;
+  font-weight: 900;
+  text-shadow: 2px 0px 5px #000000;
 }
 .account-buttons__login {
-  color: #8C30F5;
-  background-color: #F1E4FF;
+  background-color: #474A57;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) {
   .account-buttons__login {
-    color: #18191F;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .account-buttons__login {
-    color: #18191F;
+    background-color: #F1E4FF;
+    text-shadow: 0px 0px 4px #0007c4;
+    color: #8C30F5;
   }
 }
 .account-buttons__sign-up {
-  color: #ffffff;
-  background-color: #8C30F5;
+  background-color: #969BAB;
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 1024px) {
   .account-buttons__sign-up {
-    color: #8C30F5;
-    background-color: #ffffff;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-  .account-buttons__sign-up {
-    color: #8C30F5;
-    background-color: #ffffff;
+    background-color: #8C30F5;
   }
 }
 
@@ -480,27 +461,19 @@ SCSS and BEM structure were used on this project
 .saveEditor > * {
   font-weight: 900;
 }
-.saveEditor__close {
-  position: absolute;
-  align-self: flex-end;
-  text-align: center;
-  font-size: 12px;
-  color: #ffffff;
-  font-weight: 900;
-  cursor: pointer;
-  border-radius: 25%;
-  background-color: #0401b5;
-  width: 10px;
-  bottom: 1px;
-  min-width: max-content;
-  margin: 0;
-}
 .saveEditor__title {
   color: #000000;
   font-size: 22px;
   text-transform: uppercase;
   margin: 0 auto 10px;
   padding: 5px 0;
+}
+.saveEditor__title::after {
+  position: relative;
+  content: " Editable Mode";
+  font-size: 15px;
+  text-transform: capitalize;
+  font-weight: 900;
 }
 .saveEditor__Ok {
   cursor: pointer;
@@ -516,6 +489,21 @@ SCSS and BEM structure were used on this project
 .saveEditor__Ok:hover {
   filter: drop-shadow(2px 2px 4px);
   border-inline: 3px solid #ff7215e0;
+}
+.saveEditor__close {
+  position: absolute;
+  align-self: flex-end;
+  text-align: center;
+  font-size: 12px;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  border-radius: 25%;
+  background-color: #0401b5;
+  width: 10px;
+  bottom: 1px;
+  min-width: max-content;
+  margin: 0;
 }
 
 .overview {
@@ -605,7 +593,6 @@ SCSS and BEM structure were used on this project
   align-items: center;
   right: 0%;
   width: 100%;
-  background-color: blue;
 }
 .image__stats {
   position: absolute;
