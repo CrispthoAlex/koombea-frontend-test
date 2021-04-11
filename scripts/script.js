@@ -101,6 +101,5 @@ $('.js-saveEditor__Ok').on('click', () => {
 $('.js-saveEditor__close').on('click', () => {
   $('.saveEditor')[0].style.display='none';
   location.reload();
-  console.log($('window'));
 });
 
