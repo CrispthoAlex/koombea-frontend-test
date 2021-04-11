@@ -1,5 +1,11 @@
 # ![](./image/favicon-32x32.png) Koombea Landing Page Test ![](./image/favicon-landify-32x32.png)
 
+![image](https://user-images.githubusercontent.com/60373956/114293782-a160a180-9a5e-11eb-81fd-dda2b2453c12.png)
+
+![image](https://user-images.githubusercontent.com/60373956/114293802-c9500500-9a5e-11eb-8794-57c54776fd75.png)
+
+
+
 ## **Overview**
 This project consists of creating a landing page in HTML, CSS and Javascript based on the [Figma Design](https://landify.design/), applying SASS and BEM structures.
 
@@ -18,6 +24,7 @@ This project consists of creating a landing page in HTML, CSS and Javascript bas
 * Code order
 * Good practices
 * Correct use of rules and tools will be taken into account
+* Editable mode will be activate with _Ctrl + k (Windows OS) or Comd + k (Mac Os)_
 * Images optimized for the web ([analyzer](https://tinyjpg.com/analyzer))
 * Check [Gtmetrix](https://gtmetrix.com/) score
 * Check [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/)
