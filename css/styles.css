@@ -88,12 +88,12 @@ body, html {
 }
 
 /* Don't show link behavior*/
-a:link {
-  color: currentColor;
-}
-
-a:link, a:visited {
+a, a:link {
+  color: currentcolor;
   text-decoration: none;
+}
+a:focus {
+  border: none;
 }
 
 /* Don't show border when click */
@@ -384,9 +384,6 @@ SCSS and BEM structure were used on this project
   font-size: 0.778em;
   width: 33%;
 }
-.account-buttons a {
-  color: #ffffff;
-}
 @media screen and (min-width: 1024px) {
   .account-buttons {
     width: fit-content;
@@ -402,7 +399,6 @@ SCSS and BEM structure were used on this project
   max-width: 5.556em;
   padding: 0.5em 0;
   font-weight: 900;
-  text-shadow: 2px 0px 5px #000000;
 }
 .account-buttons__login {
   background-color: #474A57;
@@ -410,7 +406,6 @@ SCSS and BEM structure were used on this project
 @media screen and (min-width: 1024px) {
   .account-buttons__login {
     background-color: #F1E4FF;
-    text-shadow: 0px 0px 4px #0007c4;
     color: #8C30F5;
   }
 }
@@ -420,6 +415,7 @@ SCSS and BEM structure were used on this project
 @media screen and (min-width: 1024px) {
   .account-buttons__sign-up {
     background-color: #8C30F5;
+    color: #ffffff;
   }
 }
 

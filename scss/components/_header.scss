@@ -201,7 +201,6 @@ SCSS and BEM structure were used on this project
     justify-content: center;
     font-size:.778em;
     width: 33%;
-    a { color: #ffffff; }
     @include responsive-page(mdtop) { width: fit-content; }
     &__login, &__sign-up {
         display: flex;
@@ -213,17 +212,18 @@ SCSS and BEM structure were used on this project
         max-width: 5.556em;
         padding: .5em 0;
         font-weight: 900;
-        text-shadow: 2px 0px 5px #000000;
     }
     &__login { background-color: $gray800;
         @include responsive-page(mdtop) {
             background-color: $purple100;
-            text-shadow: 0px 0px 4px rgb(0, 7, 196);
             color:$purple;
         }
     }
 
     &__sign-up { background-color:$gray700;
-        @include responsive-page(mdtop) { background-color:$purple; }
+        @include responsive-page(mdtop) {
+            background-color:$purple;
+            color:#ffffff;
+        }
     }
 }
